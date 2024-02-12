@@ -1,12 +1,16 @@
+"use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const Main = () => {
+  const router = useRouter();
+
   return (
-    <div className="w-full h-screen text-center">
+    <div className="w-full h-screen text-center my-5">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div id="home">
           <p className="uppercase text-sm tracking-widest text-gray-600">
@@ -37,9 +41,15 @@ const Main = () => {
             >
               <FaGithub />
             </Link>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
+            <Link
+              href={"/"}
+              // onClick={() => {
+              //   router.push("mailto:mhmdnab004@gmail.com");
+              // }}
+              className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300"
+            >
               <AiOutlineMail />
-            </div>
+            </Link>
             <div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
               <BsFillPersonLinesFill />
             </div>
