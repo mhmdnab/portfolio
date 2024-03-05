@@ -12,8 +12,8 @@ import nextjs from "../../public/assets/nextjs-icon.png";
 
 const Skills = () => {
   return (
-    <div className="w-full lg:h-screen p-2" id="skills">
-      <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">
+    <div className="w-full lg:h-screen p-2 py-7" id="skills">
+      <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full my-6">
         <p className="uppercase tracking-widest text-[#0c4f57] text-2xl">
           My Skills
         </p>
@@ -22,7 +22,7 @@ const Skills = () => {
           I prioritize minimalist design and enjoy crafting interactive
           experiences from scratch... Using these technologies
         </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:text-sm py-4 ">
           <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
             <div className="grid grid-cols-2 gap-4 justify-center items-center">
               <div className="m-auto">

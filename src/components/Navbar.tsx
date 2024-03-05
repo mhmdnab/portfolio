@@ -42,7 +42,9 @@ const Navbar = () => {
       </div>
       <div
         className={
-          nav ? "md:hidden fixed left-0 top-0 w-full h-screen bg-black/50" : ""
+          nav
+            ? "md:hidden fixed left-0 top-0 m-auto p-auto w-full h-screen bg-black/50"
+            : ""
         }
       >
         <div

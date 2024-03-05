@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div className="w-full md:h-screen p-2 flex items-center py-16" id="about">
       <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8 ">
-        <div className="col-span-2">
+        <div className="col-span-2 my-6">
           <p className="uppercase tracking-widest text-[#0c4f57] text-2xl">
             About me
           </p>
@@ -26,10 +26,16 @@ const About = () => {
             frameworks that are useful for this purpose.
           </p>
           <p className="py-2 cursor-pointer underline">
-            Check out my latest projects
+            <a
+              href={"https://www.github.com/moesecc"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Check out my latest projects
+            </a>
           </p>
         </div>
-        <div className="w-full h-auto m-auto shadow-xl shadow-gray-600 rounded-xl  flex items-center justify-ceneter hover:scale-105 ease-in duration-300">
+        <div className="w-full h-auto m-auto shadow-xl shadow-gray-600 rounded-xl flex items-center justify-ceneter hover:scale-105 ease-in duration-300">
           <img
             className="rounded-xl"
             src="https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
