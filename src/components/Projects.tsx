@@ -9,7 +9,7 @@ const Projects = () => {
         <p className="text-xl tracking-widest uppercase text-[#0c4f57]">
           Projects
         </p>
-        <h2 className="py-4">What I&#39ve built</h2>
+        <h2 className="py-4">What I have built</h2>
         <p className="pb-4 pt-2 ">
           This is one of many projects I made throughout my journey, you can
           check out my{" "}
