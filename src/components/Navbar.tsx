@@ -32,7 +32,7 @@ const Navbar = () => {
               <ScrollLink href={"#projects"}>Projects</ScrollLink>
             </li>
             <li className="ml-10 text-sm uppercase hover:text-[#e0c4f57]">
-              <ScrollLink href={"#contact"}>Contact</ScrollLink>
+              <ScrollLink href={"#contact"}>Contact Me</ScrollLink>
             </li>
           </ul>
           <div className="md:hidden cursor-pointer" onClick={handleNav}>
@@ -85,7 +85,7 @@ const Navbar = () => {
                 <li className="py-4 text-sm">Projects</li>
               </ScrollLink>
               <ScrollLink href={"#contact"}>
-                <li className="py-4 text-sm">Contact</li>
+                <li className="py-4 text-sm">Contact Me</li>
               </ScrollLink>
             </ul>
             <div className="pt-40">

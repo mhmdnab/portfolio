@@ -31,7 +31,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Check out my latest projects
+              Check out my latest projects down below
             </a>
           </p>
         </div>
