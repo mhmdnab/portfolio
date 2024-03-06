@@ -11,8 +11,8 @@ const Main = () => {
 
   return (
     <div className="w-full h-screen text-center my-5">
-      <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
-        <div id="home">
+      <div className="max-w-[1240px] w-full h-full mx-auto p-2 my-5 flex justify-center items-center">
+        <div id="home" className="py-4">
           <p className="uppercase text-sm tracking-widest text-gray-600">
             Lets reach out and build together
           </p>
