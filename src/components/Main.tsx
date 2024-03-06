@@ -14,14 +14,14 @@ const Main = () => {
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div id="home">
           <p className="uppercase text-sm tracking-widest text-gray-600">
-            Let's reach out and build together
+            Let&#39s reach out and build together
           </p>
           <h1 className="py-4">
-            Hey, I'm <span className="text-[#0c4f57]">Mohamad</span>
+            Hey, I&#39m <span className="text-[#0c4f57]">Mohamad</span>
           </h1>
           <h1 className="py-2">A Full Stack Web Developer (MERN)</h1>
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
-            I'm a MERN Full-Stack web developer creating sleek and functional
+            I&#39m a MERN Full-Stack web developer creating sleek and functional
             websites. Proficient in HTML, CSS, JavaScript (React Js and Next
             Js), MongoDB, and Node.js, I stay current with web trends through
             continuous learning. I thrive on collaborative projects, ensuring
