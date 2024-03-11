@@ -15,7 +15,7 @@ const About = () => {
             I specialize in building full stack websites with their front-end
             and back-end that connect with APIs and other backend technologies.
             Im passionate about learning new technologies and understand more
-            about thsi domain. Though I am most proficient in building front-end
+            about this domain. Though I am most proficient in building front-end
             applications using HTML, CSS, Javascript, React and Next. I believe
             that being a great developer is not using one specific language, but
             choosing the best tool for the job.
@@ -39,7 +39,7 @@ const About = () => {
         </div>
         <div className="w-full h-auto m-auto shadow-xl shadow-gray-600 rounded-xl flex items-center justify-ceneter hover:scale-105 ease-in duration-300">
           <Image
-            className="rounded-xl"
+            className="rounded-xl w-auto"
             src={aboutImg}
             alt="abtImg"
             width={395}
