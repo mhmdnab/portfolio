@@ -10,7 +10,7 @@ const Footer = () => {
         <p className="text-[#caf3f8] text-center">
           Drop me an email so we can reach out and build together
         </p>
-        <p className="text-[#caf3f8] w-auto p-2 text-center">
+        <p className="text-[#caf3f8] w-auto p-2 text-center underline">
           <a href="mailto:mhmdnab004@gmail.com">mhmdnab004@gmail.com</a>
         </p>
       </div>

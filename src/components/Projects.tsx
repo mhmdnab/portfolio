@@ -13,8 +13,9 @@ const Projects = () => {
         </p>
         <h2 className="py-4">What I have built</h2>
         <p className="pb-4 pt-2 ">
-          These are some of many projects that I made throughout my journey, you
-          can check out my{" "}
+          Here are a few projects from my portfolio, showcasing a range of
+          frontend and backend work using various frameworks. Feel free to
+          explore my{" "}
           <a
             href={"https://www.github.com/moesecc"}
             rel="noopener noreferrer"
@@ -23,8 +24,7 @@ const Projects = () => {
           >
             GitHub
           </a>{" "}
-          to see my other projects varying from frontend to backend using
-          different frameworks
+          for more examples of my work.
         </p>
         {/**/}
         <div className=" justify-center items-center m-auto my-5  grid md:grid-cols-2 gap-8 ">
