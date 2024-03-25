@@ -21,7 +21,7 @@ const Main = () => {
           </h1>
           <h1 className="py-2">A Full Stack Web Developer (MERN)</h1>
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
-            I am a MERN Full-Stack web developer creating sleek and functional
+            I am a MERN Full-Stack web developer, creating sleek and functional
             websites. Proficient in HTML, CSS, JavaScript (React Js and Next
             Js), MongoDB, and Node.js, I stay current with web trends through
             continuous learning. I thrive on collaborative projects, ensuring

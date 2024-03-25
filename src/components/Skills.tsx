@@ -20,7 +20,7 @@ const Skills = () => {
         <h2 className="py-4">What do I do</h2>
         <p className="py-4 text-xl">
           I prioritize minimalist design and enjoy crafting interactive
-          experiences from scratch... Using these technologies
+          experiences from scratch, using these technologies listed below.
         </p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:text-sm py-4 ">
           <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
