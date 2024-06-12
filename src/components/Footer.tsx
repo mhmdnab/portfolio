@@ -29,13 +29,17 @@ const Footer = () => {
               className="hover:scale-125 transition-transform duration-200"
             />
           </a>
-          <a href="https://www.linkedin.com/in/mohamad-el-naboulsi-6480311aa/">
+          <a
+            href="https://www.linkedin.com/in/mohamad-el-naboulsi-6480311aa/"
+            rel="noopener"
+            target="_blank"
+          >
             <FaLinkedin
               size={30}
               className="hover:scale-125 transition-transform duration-200"
             />
           </a>
-          <a href="https://github.com/moesecc">
+          <a href="https://github.com/moesecc" rel="noopener" target="_blank">
             <FaGithub
               size={30}
               className="hover:scale-125 transition-transform duration-200"
