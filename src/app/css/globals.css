@@ -32,3 +32,32 @@
     @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white;
   }
 }
+
+/* For WebKit-based browsers (e.g., Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Transparent background of the scrollbar track */
+  border-radius: 12px; /* Rounded corners of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Semi-transparent color for the scrollbar thumb */
+  /* Rounded corners of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* More opaque color for the scrollbar thumb when hovered */
+}

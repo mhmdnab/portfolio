@@ -20,7 +20,7 @@ const Projects = () => {
             href={"https://www.github.com/moesecc"}
             rel="noopener noreferrer"
             target="_blank"
-            className="underline"
+            className="underline hover:text-[#147b86]"
           >
             GitHub
           </a>{" "}
@@ -28,7 +28,7 @@ const Projects = () => {
         </p>
         {/**/}
         <div className=" justify-center items-center m-auto my-5  grid md:grid-cols-2 gap-8 ">
-          <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] ">
+          <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] cursor-pointer hover:scale-105 transtion-transform duration-200">
             <Image
               src={projectImg}
               alt=""
@@ -47,7 +47,7 @@ const Projects = () => {
             href={"https://weatherappmoesecc.netlify.app"}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] "
+            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 transtion-transform duration-200"
           >
             <Image
               src={projectImg2}

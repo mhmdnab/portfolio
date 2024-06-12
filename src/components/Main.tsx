@@ -3,14 +3,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const Main = () => {
   const router = useRouter();
 
   return (
-    <div className="w-full h-screen text-center my-5">
+    <div className="w-full h-screen text-center my-8">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 my-5 flex justify-center items-center">
         <div id="home" className="py-4">
           <p className="uppercase text-sm tracking-widest text-gray-600">
@@ -33,7 +32,7 @@ const Main = () => {
               href={"https://www.linkedin.com/in/mohamad-el-naboulsi-6480311aa"}
               rel="noopener noreferrer"
               target="_blank"
-              className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300"
+              className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-100"
             >
               <FaLinkedinIn />
             </Link>
@@ -41,7 +40,7 @@ const Main = () => {
               href={"https://www.github.com/moesecc"}
               rel="noopener noreferrer"
               target="_blank"
-              className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300"
+              className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-100"
             >
               <FaGithub />
             </Link>
@@ -50,13 +49,13 @@ const Main = () => {
               // onClick={() => {
               //   router.push("mailto:mhmdnab004@gmail.com");
               // }}
-              className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300"
+              className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-100"
             >
               <AiOutlineMail />
             </Link>
-            <div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
+            {/* <div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
               <BsFillPersonLinesFill />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

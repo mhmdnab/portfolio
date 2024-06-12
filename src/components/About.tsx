@@ -4,7 +4,10 @@ import aboutImg from "../../public/assets/about.jpg";
 
 const About = () => {
   return (
-    <div className="w-full md:h-screen p-2 flex items-center py-16" id="about">
+    <div
+      className="w-full md:h-screen p-2 my-2 flex items-center py-16"
+      id="about"
+    >
       <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8 ">
         <div className="col-span-2 my-6">
           <p className="uppercase tracking-widest text-[#0c4f57] text-2xl">
@@ -33,12 +36,13 @@ const About = () => {
               href={"https://www.github.com/moesecc"}
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:text-[#147b86]"
             >
-              Check out my latest projects down below
+              Click here to check out my latest projects
             </a>
           </p>
         </div>
-        <div className="w-full h-auto m-auto shadow-xl shadow-gray-600 rounded-xl flex items-center justify-ceneter hover:scale-105 ease-in duration-300">
+        <div className="w-full h-auto m-auto shadow-xl rounded-xl flex items-center justify-ceneter ">
           <Image
             className="rounded-xl w-auto"
             src={aboutImg}

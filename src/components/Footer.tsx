@@ -1,4 +1,6 @@
 import React from "react";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -7,12 +9,39 @@ const Footer = () => {
       className="p-4 m-auto items-center w-full flex-col justify-center bg-gradient-to-r from-[#147b86] to-[#055b64] border shadow-2xl"
     >
       <div className="items-center py-4">
-        <p className="text-[#caf3f8] text-center">
-          Drop me an email so we can reach out and build together
+        <p className="text-[#caf3f8] text-center text-xl">
+          Follow me on my social media for the latest updates.
         </p>
-        <p className="text-[#caf3f8] w-auto p-2 text-center underline">
-          <a href="mailto:mhmdnab004@gmail.com">mhmdnab004@gmail.com</a>
-        </p>
+        <div className="text-[#caf3f8] w-auto p-4 text-center flex justify-center gap-8">
+          <a href="mailto:mhmdnab004@gmail.com" rel="noopener" target="_blank">
+            <AiOutlineMail
+              size={30}
+              className="hover:scale-125 transition-transform duration-200"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/mhmadnab/"
+            rel="noopener"
+            target="_blank"
+          >
+            <FaInstagram
+              size={30}
+              className="hover:scale-125 transition-transform duration-200"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/mohamad-el-naboulsi-6480311aa/">
+            <FaLinkedin
+              size={30}
+              className="hover:scale-125 transition-transform duration-200"
+            />
+          </a>
+          <a href="https://github.com/moesecc">
+            <FaGithub
+              size={30}
+              className="hover:scale-125 transition-transform duration-200"
+            />
+          </a>
+        </div>
       </div>
     </div>
   );

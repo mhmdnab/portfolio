@@ -19,19 +19,16 @@ const Navbar = () => {
         </h1>
         <div>
           <ul className="hidden md:flex">
-            <li className="ml-10 text-sm uppercase hover:text-[#e0c4f57]">
-              <ScrollLink href={"#home"}>Home</ScrollLink>
-            </li>
-            <li className="ml-10 text-sm uppercase hover:text-[#e0c4f57]">
+            <li className="ml-10 text-sm uppercase hover:text-[#147b86]">
               <ScrollLink href={"#about"}>About</ScrollLink>
             </li>
-            <li className="ml-10 text-sm uppercase hover:text-[#e0c4f57]">
+            <li className="ml-10 text-sm uppercase hover:text-[#147b86]">
               <ScrollLink href={"#skills"}>Skills</ScrollLink>
             </li>
-            <li className="ml-10 text-sm uppercase hover:text-[#e0c4f57]">
+            <li className="ml-10 text-sm uppercase hover:text-[#147b86]">
               <ScrollLink href={"#projects"}>Projects</ScrollLink>
             </li>
-            <li className="ml-10 text-sm uppercase hover:text-[#e0c4f57]">
+            <li className="ml-10 text-sm uppercase hover:text-[#147b86]">
               <ScrollLink href={"#contact"}>Contact Me</ScrollLink>
             </li>
           </ul>
@@ -56,7 +53,9 @@ const Navbar = () => {
         >
           <div>
             <div className="flex justify-between w-full items-center">
-              <h1 className="text-[#0c4f57]">MOE</h1>
+              <Link href="/" className="text-[#0c4f57]">
+                <h1>MOE</h1>
+              </Link>
               <div
                 onClick={handleNav}
                 className="rounded-full shadow-lg shadow-gray-600 p-2 cursor-pointer"
@@ -72,20 +71,19 @@ const Navbar = () => {
           </div>
           <div className="py-4 flex flex-col">
             <ul className="uppercase">
-              <ScrollLink href={"#home"}>
-                <li className="py-4 text-sm">Home</li>
-              </ScrollLink>
               <ScrollLink href={"#about"}>
-                <li className="py-4 text-sm">About</li>
+                <li className="py-4 text-sm hover:text-[#147b86]">About</li>
               </ScrollLink>
               <ScrollLink href={"#skills"}>
-                <li className="py-4 text-sm">Skills</li>
+                <li className="py-4 text-sm hover:text-[#147b86]">Skills</li>
               </ScrollLink>
               <ScrollLink href={"#projects"}>
-                <li className="py-4 text-sm">Projects</li>
+                <li className="py-4 text-sm hover:text-[#147b86]">Projects</li>
               </ScrollLink>
               <ScrollLink href={"#contact"}>
-                <li className="py-4 text-sm">Contact Me</li>
+                <li className="py-4 text-sm hover:text-[#147b86]">
+                  Contact Me
+                </li>
               </ScrollLink>
             </ul>
             <div className="pt-40">
