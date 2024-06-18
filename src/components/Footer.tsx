@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="text-[#caf3f8] w-auto p-4 text-center flex justify-center gap-8">
           <a href="mailto:mhmdnab004@gmail.com" rel="noopener" target="_blank">
             <AiOutlineMail
-              size={30}
+              size={31}
               className="hover:scale-125 transition-transform duration-200"
             />
           </a>

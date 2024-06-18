@@ -3,6 +3,7 @@ import React from "react";
 import projectImg from "../../public/assets/project1-ss.png";
 import projectImg2 from "../../public/assets/Screenshot 2024-03-06 113940.png";
 import Link from "next/link";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
   return (
@@ -47,7 +48,7 @@ const Projects = () => {
             href={"https://weatherappmoesecc.netlify.app"}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 transtion-transform duration-200"
+            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
           >
             <Image
               src={projectImg2}
@@ -59,7 +60,7 @@ const Projects = () => {
                 Weather App using an API
               </h3>
               <p className="pb-4 pt-2 text-white text-center text-md md:text-base">
-                React, CSS, and JavaScript
+                React, CSS, and JavaScript <FaExternalLinkAlt />
               </p>
             </div>{" "}
           </Link>
