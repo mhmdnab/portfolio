@@ -23,7 +23,7 @@ const Skills = () => {
           experiences from scratch, using these technologies listed below.
         </p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:text-sm py-4 ">
-          <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-200 hover:bg-[#5db2bc]">
+          <div className="p-6 shadow-2xl rounded-xl hover:scale-105 ease-in duration-200 hover:shadow-[#0ea2b3]">
             <div className="grid grid-cols-2 gap-4 justify-center items-center">
               <div className="m-auto">
                 <Image width="96" height="96" src={html} alt="html" />
@@ -33,7 +33,7 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:bg-[#5db2bc]">
+          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#0ea2b3]">
             <div className="grid grid-cols-2 gap-4 justify-center items-center">
               <div className="m-auto">
                 <Image width="96" height="96" src={jsicon} alt="javascript" />
@@ -43,7 +43,7 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:bg-[#5db2bc]">
+          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#0ea2b3]">
             <div className="grid grid-cols-2 gap-4 justify-center items-center">
               <div className="m-auto">
                 <Image width="96" height="96" src={css} alt="css" />
@@ -53,7 +53,7 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:bg-[#5db2bc]">
+          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#0ea2b3]">
             <div className="grid grid-cols-2 gap-4 justify-center items-center">
               <div className="m-auto">
                 <Image width="96" height="96" src={reactjs} alt="React" />
@@ -63,7 +63,7 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:bg-[#5db2bc]">
+          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#0ea2b3]">
             <div className="grid grid-cols-2 gap-4 justify-center items-center">
               <div className="m-auto">
                 <Image width="96" height="96" src={nextjs} alt="next" />
@@ -73,7 +73,7 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:bg-[#5db2bc]">
+          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#0ea2b3]">
             <div className="grid grid-cols-2 gap-4 justify-center items-center">
               <div className="m-auto">
                 <Image width="96" height="96" src={tailwind} alt="tailwind" />
@@ -83,7 +83,7 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:bg-[#5db2bc]">
+          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#0ea2b3]">
             <div className="grid grid-cols-2 gap-4 justify-center items-center">
               <div className="m-auto">
                 <Image width="96" height="96" src={mongo} alt="mongodb" />
@@ -93,7 +93,7 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:bg-[#5db2bc]">
+          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#0ea2b3]">
             <div className="grid grid-cols-2 gap-4 justify-center items-center">
               <div className="m-auto">
                 <Image width="96" height="96" src={nodejs} alt="node js" />

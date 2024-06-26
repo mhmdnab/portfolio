@@ -29,7 +29,7 @@ const Projects = () => {
         </p>
         {/**/}
         <div className=" justify-center items-center m-auto my-5  grid md:grid-cols-2 gap-8 ">
-          <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] cursor-pointer hover:scale-105 transtion-transform duration-200">
+          <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] cursor-pointer hover:scale-105 ease-out duration-200">
             <Image
               src={projectImg}
               alt=""
@@ -48,21 +48,22 @@ const Projects = () => {
             href={"https://weatherappmoesecc.netlify.app"}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
+            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
           >
             <Image
               src={projectImg2}
               alt=""
               className="rounded-xl group-hover:opacity-10"
             />
-            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-              <h3 className="text-lg md:text-2xl text-white tracking-wider text-center">
+            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
+              <h3 className="text-lg md:text-2xl text-white tracking-wider">
                 Weather App using an API
               </h3>
-              <p className="pb-4 pt-2 text-white text-center text-md md:text-base">
-                React, CSS, and JavaScript <FaExternalLinkAlt />
+              <p className="pb-2 pt-2 text-white text-md md:text-base">
+                React, CSS, and JavaScript
               </p>
-            </div>{" "}
+              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
+            </div>
           </Link>
         </div>
       </div>

@@ -15,14 +15,13 @@ const About = () => {
           </p>
           <h2 className="py-4">Who I Am</h2>
           <p className="py-2">
-            I specialize in building full-stack websites with front-end and
-            back-end components that connect with APIs and other backend
-            technologies. I am passionate about learning new technologies and
-            expanding my understanding of this domain. While I am most
-            proficient in building front-end applications using HTML, CSS,
-            JavaScript, React, and Next.js, I believe that being a great
-            developer is not about using one specific language, but about
-            choosing the best tool for the job.
+            I specialize in building websites with front-end and back-end
+            components that connect with APIs and other backend technologies. I
+            am passionate about learning new technologies and expanding my
+            understanding of this domain. While I am most proficient in building
+            front-end applications using React or Next.js. I believe that being
+            a great web developer is not about using one specific language, but
+            about choosing the best tool for the job.
           </p>
           <p className="py-2">
             I started web development in 2021, managing multiple e-commerce

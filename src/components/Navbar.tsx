@@ -13,7 +13,7 @@ const Navbar = () => {
   };
   return (
     <div className="fixed w-full h-20 shadow-xl backdrop-blur-md z-[100]">
-      <div className="flex justify-between items-center w-full h-full px-3 2xl:px-16">
+      <div className="flex justify-between items-center w-full h-full px-6 2xl:px-16">
         <h1 className="text-[#0c4f57]">
           <Link href="/">MOE</Link>
         </h1>
