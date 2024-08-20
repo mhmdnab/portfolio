@@ -40,24 +40,18 @@
 
 ::-webkit-scrollbar-track {
   background: transparent; /* Transparent background of the scrollbar track */
-  border-radius: 12px; /* Rounded corners of the scrollbar track */
+  /* Rounded corners of the scrollbar track */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(
-    0,
-    0,
-    0,
-    0.3
-  ); /* Semi-transparent color for the scrollbar thumb */
-  /* Rounded corners of the scrollbar thumb */
+  background: #80cdd5; /* Color for the scrollbar thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* More opaque color for the scrollbar thumb when hovered */
+    12,
+    79,
+    87,
+    0.8
+  ); /* Slightly more opaque color for the scrollbar thumb when hovered */
 }

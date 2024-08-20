@@ -19,16 +19,16 @@ const Navbar = () => {
         </h1>
         <div>
           <ul className="hidden md:flex">
-            <li className="ml-10 text-sm uppercase hover:text-[#147b86]">
+            <li className="ml-10 text-md uppercase hover:text-[#147b86]">
               <ScrollLink href={"#about"}>About</ScrollLink>
             </li>
-            <li className="ml-10 text-sm uppercase hover:text-[#147b86]">
+            <li className="ml-10 text-lg uppercase hover:text-[#147b86]">
               <ScrollLink href={"#skills"}>Skills</ScrollLink>
             </li>
-            <li className="ml-10 text-sm uppercase hover:text-[#147b86]">
+            <li className="ml-10 text-lg uppercase hover:text-[#147b86]">
               <ScrollLink href={"#projects"}>Projects</ScrollLink>
             </li>
-            <li className="ml-10 text-sm uppercase hover:text-[#147b86]">
+            <li className="ml-10 text-lg uppercase hover:text-[#147b86]">
               <ScrollLink href={"#contact"}>Contact Me</ScrollLink>
             </li>
           </ul>
