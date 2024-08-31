@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import projectImg from "../../public/assets/project1-ss.png";
-import projectImg2 from "../../public/assets/Screenshot 2024-03-06 113940.png";
+import projectImg2 from "../../public/assets/project2-ss.png";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -29,7 +29,7 @@ const Projects = () => {
         </p>
         {/**/}
         <div className=" justify-center items-center m-auto my-5  grid md:grid-cols-2 gap-8 ">
-          <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] cursor-pointer hover:scale-105 ease-out duration-200">
+          <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl border-2 border-[#055b64] group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] cursor-pointer hover:scale-105 ease-out duration-200">
             <Image
               src={projectImg}
               alt=""
@@ -48,7 +48,7 @@ const Projects = () => {
             href={"https://weatherappmoesecc.netlify.app"}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl p-4 group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
+            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl border-2 border-[#055b64] group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
           >
             <Image
               src={projectImg2}
@@ -67,6 +67,9 @@ const Projects = () => {
           </Link>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
     </div>
   );
 };

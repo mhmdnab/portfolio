@@ -1,6 +1,7 @@
 import React from "react";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
+import { BsWhatsapp } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
           <a href="mailto:mhmdnab004@gmail.com" rel="noopener" target="_blank">
             <AiOutlineMail
               size={31}
-              className="hover:scale-125 transition-transform duration-200"
+              className="hover:scale-110 transition-transform duration-200"
             />
           </a>
           <a
@@ -26,7 +27,7 @@ const Footer = () => {
           >
             <FaInstagram
               size={30}
-              className="hover:scale-125 transition-transform duration-200"
+              className="hover:scale-110 transition-transform duration-200"
             />
           </a>
           <a
@@ -36,13 +37,19 @@ const Footer = () => {
           >
             <FaLinkedin
               size={30}
-              className="hover:scale-125 transition-transform duration-200"
+              className="hover:scale-110 transition-transform duration-200"
             />
           </a>
           <a href="https://github.com/moesecc" rel="noopener" target="_blank">
             <FaGithub
               size={30}
-              className="hover:scale-125 transition-transform duration-200"
+              className="hover:scale-110 transition-transform duration-200"
+            />
+          </a>
+          <a href="https://wa.link/ssvq0l" rel="noopener" target="_blank">
+            <BsWhatsapp
+              size={30}
+              className="hover:scale-110 transition-transform duration-200"
             />
           </a>
         </div>

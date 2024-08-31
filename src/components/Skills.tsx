@@ -22,7 +22,7 @@ const Skills = () => {
           I prioritize minimalist design and enjoy crafting interactive
           experiences from scratch, using these technologies listed below.
         </p>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:text-sm py-4 ">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-xs md:text-lg py-4 ">
           <div className="p-6 shadow-2xl rounded-xl hover:scale-105 ease-in duration-200 hover:shadow-[#0ea2b3]">
             <div className="grid grid-cols-2 gap-4 justify-center items-center">
               <div className="m-auto">
@@ -58,7 +58,7 @@ const Skills = () => {
               <div className="m-auto">
                 <Image width="96" height="96" src={reactjs} alt="React" />
               </div>
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex flex-col items-center justify-center ">
                 <h3>React</h3>
               </div>
             </div>

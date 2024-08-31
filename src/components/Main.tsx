@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
+import { BsWhatsapp } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn, FaLaptopCode } from "react-icons/fa";
 
 const Main = () => {
@@ -57,6 +58,14 @@ const Main = () => {
               className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#0ea2b3] hover:shadow-xl p-5 cursor-pointer hover:scale-110 ease-in duration-100"
             >
               <AiOutlineMail />
+            </Link>
+            <Link
+              href={"https://wa.link/ssvq0l"}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#0ea2b3] hover:shadow-xl p-5 cursor-pointer hover:scale-110 ease-in duration-100"
+            >
+              <BsWhatsapp />
             </Link>
             {/* <div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
               <BsFillPersonLinesFill />

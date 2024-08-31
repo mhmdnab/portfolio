@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
+import { BsWhatsapp } from "react-icons/bs";
 import ScrollLink from "./ScrollLink";
 
 const Navbar = () => {
@@ -19,21 +19,23 @@ const Navbar = () => {
         </h1>
         <div>
           <ul className="hidden md:flex">
-            <li className="ml-10 text-md uppercase hover:text-[#147b86]">
+            <li className="ml-10 text-lg uppercase hover:text-[#147b86] hover:scale-105 transition-transform">
               <ScrollLink href={"#about"}>About</ScrollLink>
+              <span className="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-3/6"></span>
+              <span className="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-indigo-600 group-hover:w-3/6"></span>
             </li>
-            <li className="ml-10 text-lg uppercase hover:text-[#147b86]">
+            <li className="ml-10 text-lg uppercase hover:text-[#147b86] hover:scale-105 transition-transform">
               <ScrollLink href={"#skills"}>Skills</ScrollLink>
             </li>
-            <li className="ml-10 text-lg uppercase hover:text-[#147b86]">
+            <li className="ml-10 text-lg uppercase hover:text-[#147b86] hover:scale-105 transition-transform">
               <ScrollLink href={"#projects"}>Projects</ScrollLink>
             </li>
-            <li className="ml-10 text-lg uppercase hover:text-[#147b86]">
+            <li className="ml-10 text-lg uppercase hover:text-[#147b86] hover:scale-105 transition-transform">
               <ScrollLink href={"#contact"}>Contact Me</ScrollLink>
             </li>
           </ul>
           <div className="md:hidden cursor-pointer" onClick={handleNav}>
-            <AiOutlineMenu size={25} />
+            <AiOutlineMenu size={25} className="text-[#0c4f57]" />
           </div>
         </div>
       </div>
@@ -56,11 +58,8 @@ const Navbar = () => {
               <Link href="/" className="text-[#0c4f57]">
                 <h1>MOE</h1>
               </Link>
-              <div
-                onClick={handleNav}
-                className="rounded-full shadow-lg shadow-gray-600 p-2 cursor-pointer"
-              >
-                <AiOutlineClose />
+              <div onClick={handleNav} className="cursor-pointer">
+                <AiOutlineClose size={22} className="text-[#0c4f57]" />
               </div>
             </div>
             <div className="border-b border-gray-800 my-5">
@@ -116,6 +115,15 @@ const Navbar = () => {
                     target="_blank"
                   >
                     <AiOutlineMail />
+                  </a>
+                </div>
+                <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                  <a
+                    href="https://wa.link/ssvq0l"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    <BsWhatsapp />
                   </a>
                 </div>
               </div>
