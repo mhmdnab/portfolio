@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import projectImg from "../../public/assets/project1-ss.png";
 import projectImg2 from "../../public/assets/project2-ss.png";
+import projectImg3 from "../../public/assets/projectImage3.png";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -28,7 +29,7 @@ const Projects = () => {
           for additional examples of my work.
         </p>
         {/**/}
-        <div className=" justify-center items-center m-auto my-5  grid md:grid-cols-2 gap-8 ">
+        <div className=" justify-center items-center m-auto py-28  grid grid-cols-1 md:grid-cols-3 gap-8 ">
           <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl border-2 border-[#055b64] group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] cursor-pointer hover:scale-105 ease-out duration-200">
             <Image
               src={projectImg}
@@ -36,11 +37,11 @@ const Projects = () => {
               className="rounded-xl group-hover:opacity-10"
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-              <h3 className="text-lg md:text-2xl text-white tracking-wider text-center">
+              <h3 className="text-sm md:text-md text-white tracking-wider text-center">
                 Full Stack E-commerce page
               </h3>
               <p className="pb-4 pt-2 text-white text-center text-md md:text-base">
-                Mongo DB, Express, React and Node
+                Mongo DB, Express Js, React Js and Node Js
               </p>
             </div>
           </div>
@@ -56,11 +57,32 @@ const Projects = () => {
               className="rounded-xl group-hover:opacity-10"
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-lg md:text-2xl text-white tracking-wider">
+              <h3 className="text-sm md:text-md text-white tracking-wider">
                 Weather App using an API
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
-                React, CSS, and JavaScript
+                React Js and CSS
+              </p>
+              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
+            </div>
+          </Link>
+          <Link
+            href={"https://ahmadnaboulsi.vercel.app/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl border-2 border-[#055b64] group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
+          >
+            <Image
+              src={projectImg3}
+              alt=""
+              className="rounded-xl group-hover:opacity-10"
+            />
+            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
+              <h3 className="text-sm md:text-md text-white tracking-wider">
+                Ahmad Naboulsi's Portfolio that displays his work
+              </h3>
+              <p className="pb-2 pt-2 text-white text-md md:text-base">
+                Next Tsx and Tailwind CSS,
               </p>
               <FaExternalLinkAlt className="text-white mt-1 m-auto" />
             </div>
