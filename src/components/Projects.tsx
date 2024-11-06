@@ -3,6 +3,7 @@ import React from "react";
 import projectImg from "../../public/assets/project1-ss.png";
 import projectImg2 from "../../public/assets/project2-ss.png";
 import projectImg3 from "../../public/assets/projectImage3.png";
+import projectImg4 from "../../public/assets/Screenshot 2024-11-06 224717.png";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -58,7 +59,7 @@ const Projects = () => {
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
               <h3 className="text-sm md:text-md text-white tracking-wider">
-                Weather App using an API
+                Weather App using an API.
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
                 React Js and CSS
@@ -82,15 +83,35 @@ const Projects = () => {
                 Ahmad Naboulsi's Portfolio that displays his work
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
-                Next Tsx and Tailwind CSS,
+                Next Js and Tailwind CSS
+              </p>
+              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
+            </div>
+          </Link>
+          <Link
+            href={"https://doneperfumes.vercel.app/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl border-2 border-[#055b64] group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
+          >
+            <Image
+              src={projectImg4}
+              alt=""
+              className="rounded-xl group-hover:opacity-10"
+            />
+            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
+              <h3 className="text-sm md:text-md text-white tracking-wider">
+                Done Perfumes' website shwocasing various types of perfumes that
+                they offer.
+              </h3>
+              <p className="pb-2 pt-2 text-white text-md md:text-base">
+                Next Js and Tailwind CSS
               </p>
               <FaExternalLinkAlt className="text-white mt-1 m-auto" />
             </div>
           </Link>
         </div>
       </div>
-      <br />
-      <br />
       <br />
     </div>
   );

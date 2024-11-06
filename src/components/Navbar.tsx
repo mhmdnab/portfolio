@@ -2,10 +2,12 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
+import { Cedarville_Cursive } from "next/font/google";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsWhatsapp } from "react-icons/bs";
 import ScrollLink from "./ScrollLink";
 
+const cc = Cedarville_Cursive({ subsets: ["latin"], weight: "400" });
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleNav = () => {
@@ -14,8 +16,10 @@ const Navbar = () => {
   return (
     <div className="fixed w-full h-20 shadow-xl backdrop-blur-md z-[100]">
       <div className="flex justify-between items-center w-full h-full px-6 2xl:px-16">
-        <h1 className="text-[#0c4f57]">
-          <Link href="/">MOE</Link>
+        <h1 className={cc.className}>
+          <Link className="text-[#147b86]" href="/">
+            moe
+          </Link>
         </h1>
         <div>
           <ul className="hidden md:flex text-md ">

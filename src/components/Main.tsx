@@ -3,10 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { Cedarville_Cursive } from "next/font/google";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn, FaLaptopCode } from "react-icons/fa";
 
+const cc = Cedarville_Cursive({ subsets: ["latin"], weight: "400" });
 const Main = () => {
   const router = useRouter();
 
@@ -18,7 +20,7 @@ const Main = () => {
             Lets reach out and build together
           </p>
           <h1 className="py-4">
-            Hey, I am <span className="text-[#0c4f57]">Mohamad</span>
+            Hey, I am <span className={cc.className}>Mohamad</span>
           </h1>
           <h1 className="py-2">
             A Web Developer <FaLaptopCode className="text-5xl m-auto mt-8" />
