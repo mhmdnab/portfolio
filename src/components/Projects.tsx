@@ -111,7 +111,7 @@ const Projects = () => {
             </div>
           </Link>
           <Link
-            href={"https://doneperfumes.vercel.app/"}
+            href={"https://kayzone.agency/"}
             target="_blank"
             rel="noopener noreferrer"
             className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl border-2 border-[#055b64] group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
@@ -128,7 +128,7 @@ const Projects = () => {
               <p className="pb-2 pt-2 text-white text-md md:text-base">
                 SaaS website using Next and Tailwind CSS
               </p>
-              {/* <FaExternalLinkAlt className="text-white mt-1 m-auto" /> */}
+              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
             </div>
           </Link>
         </div>
