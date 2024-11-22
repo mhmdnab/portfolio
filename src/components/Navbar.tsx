@@ -60,7 +60,7 @@ const Navbar = () => {
           <div>
             <div className="flex justify-between w-full items-center">
               <Link href="/" className="text-[#0c4f57]">
-                <h1>MOE</h1>
+                <h1 className={cc.className}>MOE</h1>
               </Link>
               <div onClick={handleNav} className="cursor-pointer">
                 <AiOutlineClose size={22} className="text-[#0c4f57]" />
