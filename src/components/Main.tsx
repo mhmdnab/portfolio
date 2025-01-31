@@ -3,17 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { Cedarville_Cursive } from "next/font/google";
+import { Cedarville_Cursive, Playfair_Display } from "next/font/google";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn, FaLaptopCode } from "react-icons/fa";
 
-const cc = Cedarville_Cursive({ subsets: ["latin"], weight: "400" });
+const cc = Playfair_Display({ subsets: ["latin"], weight: "600" });
 const Main = () => {
   const router = useRouter();
 
   return (
-    <div className="w-full h-screen text-center my-8">
+    <div className="w-full h-screen text-center md:my-12 my-32">
       <div className="max-w-[1240px] w-full h-full mx-auto my-5 flex justify-center items-center">
         <div id="home" className="md:py-12 py-32">
           <p className="uppercase text-sm tracking-widest text-gray-600">
@@ -23,7 +23,7 @@ const Main = () => {
             Hey, I am <span className={cc.className}>Mohamad</span>
           </h1>
           <h1 className="py-2">
-            A Web Developer <FaLaptopCode className="text-5xl m-auto mt-8" />
+            A Web Developer <FaLaptopCode className="text-4xl m-auto mt-8" />
           </h1>
 
           <p className="py-4 text-gray-600 max-w-[70%] m-auto">
@@ -39,7 +39,7 @@ const Main = () => {
               href={"https://www.linkedin.com/in/mohamad-el-naboulsi-6480311aa"}
               rel="noopener noreferrer"
               target="_blank"
-              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#0ea2b3] hover:shadow-xl p-5 cursor-pointer hover:scale-110 ease-in duration-100"
+              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#47787d] hover:shadow-xl md:p-4 p-3 cursor-pointer hover:scale-105 ease-in duration-100"
             >
               <FaLinkedinIn className="text-xl" />
             </Link>
@@ -47,13 +47,13 @@ const Main = () => {
               href={"https://www.github.com/moesecc"}
               rel="noopener noreferrer"
               target="_blank"
-              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#0ea2b3] hover:shadow-xl p-5 cursor-pointer hover:scale-110 ease-in duration-100"
+              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#47787d] hover:shadow-xl md:p-4 p-3 cursor-pointer hover:scale-105 ease-in duration-100"
             >
               <FaGithub className="text-xl" />
             </Link>
             <Link
               href={"mailto:mhmdnab004@gmail.com"}
-              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#0ea2b3] hover:shadow-xl p-5 cursor-pointer hover:scale-110 ease-in duration-100"
+              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#47787d] hover:shadow-xl md:p-4 p-3 cursor-pointer hover:scale-105 ease-in duration-100"
             >
               <AiOutlineMail className="text-xl" />
             </Link>
@@ -61,7 +61,7 @@ const Main = () => {
               href={"https://wa.link/ssvq0l"}
               rel="noopener noreferrer"
               target="_blank"
-              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#0ea2b3] hover:shadow-xl p-5 cursor-pointer hover:scale-110 ease-in duration-100"
+              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#47787d] hover:shadow-xl md:p-4 p-3 cursor-pointer hover:scale-105 ease-in duration-100"
             >
               <BsWhatsapp className="text-xl" />
             </Link>
