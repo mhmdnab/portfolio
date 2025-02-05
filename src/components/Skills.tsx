@@ -28,7 +28,7 @@ const Skills = () => {
                 <Image width="96" height="96" src={html} alt="html" />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>HTML 5</h3>
+                <h3 className="text-base md:text-xl">HTML 5</h3>
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@ const Skills = () => {
                 <Image width="96" height="96" src={jsicon} alt="javascript" />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>Javascript</h3>
+                <h3 className="text-base md:text-xl">Javascript</h3>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@ const Skills = () => {
                 <Image width="96" height="96" src={css} alt="css" />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>CSS</h3>
+                <h3 className="text-base md:text-xl">CSS</h3>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ const Skills = () => {
                 <Image width="96" height="96" src={reactjs} alt="React" />
               </div>
               <div className="flex flex-col items-center justify-center ">
-                <h3>React</h3>
+                <h3 className="text-base md:text-xl">React</h3>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@ const Skills = () => {
                 <Image width="96" height="96" src={nextjs} alt="next" />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>Next</h3>
+                <h3 className="text-base md:text-xl">Next</h3>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ const Skills = () => {
                 <Image width="96" height="96" src={tailwind} alt="tailwind" />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>Tailwind CSS</h3>
+                <h3 className="text-base md:text-xl">Tailwind CSS</h3>
               </div>
             </div>
           </div>
@@ -88,7 +88,7 @@ const Skills = () => {
                 <Image width="96" height="96" src={mongo} alt="mongodb" />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>Mongo DB</h3>
+                <h3 className="text-base md:text-xl">Mongo DB</h3>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ const Skills = () => {
                 <Image width="96" height="96" src={nodejs} alt="node js" />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3>Node</h3>
+                <h3 className="text-base md:text-xl">Node</h3>
               </div>
             </div>
           </div>
