@@ -6,6 +6,7 @@ import projectImg3 from "../../public/assets/projectImage3.png";
 import projectImg4 from "../../public/assets/Screenshot 2024-11-06 224717.png";
 import projectImg5 from "../../public/assets/Screenshot 2024-11-17 213647.png";
 import projectImg6 from "../../public/assets/Screenshot 2025-01-31 142839.png";
+import projectImg7 from "../../public/assets/Screenshot 2025-02-10 131643.png";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -32,7 +33,7 @@ const Projects = () => {
           for additional examples of my work.
         </p>
         {/**/}
-        <div className=" justify-center items-center m-auto py-28  grid grid-cols-1 md:grid-cols-3 gap-8 ">
+        <div className=" justify-center items-center m-auto py-28  grid grid-cols-1 md:grid-cols-2 gap-8 ">
           <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] cursor-pointer hover:scale-105 ease-out duration-200">
             <Image
               src={projectImg}
@@ -44,7 +45,7 @@ const Projects = () => {
                 Full Stack E-commerce website
               </h3>
               <p className="pb-4 pt-2 text-white text-center text-md md:text-base">
-                Mongo DB, Express Js, React Js and Node Js
+                Mongo DB, Express Js, Redux Js, React Js and Node Js
               </p>
             </div>
           </div>
@@ -61,10 +62,10 @@ const Projects = () => {
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
               <h3 className="text-sm md:text-md text-white tracking-wider">
-                Weather App using an API
+                Weather App
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
-                React Js and CSS
+                React Js, CSS, JavaScript
               </p>
               <FaExternalLinkAlt className="text-white mt-1 m-auto" />
             </div>
@@ -82,10 +83,10 @@ const Projects = () => {
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
               <h3 className="text-sm md:text-md text-white tracking-wider">
-                Ahmad Naboulsi's Portfolio that displays his work
+                Ahmad Naboulsi's Portfolio
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
-                Next and Tailwind CSS
+                Next Js and Tailwind CSS
               </p>
               <FaExternalLinkAlt className="text-white mt-1 m-auto" />
             </div>
@@ -103,10 +104,10 @@ const Projects = () => {
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
               <h3 className="text-sm md:text-md text-white tracking-wider">
-                Done Perfumes' Website displaying their products
+                D.one Perfumes
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
-                Next and Tailwind CSS
+                Next Js and Tailwind CSS
               </p>
               <FaExternalLinkAlt className="text-white mt-1 m-auto" />
             </div>
@@ -124,10 +125,10 @@ const Projects = () => {
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
               <h3 className="text-sm md:text-md text-white tracking-wider">
-                KAYZONE, a marketing agency
+                KAYZONE Agnecy
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
-                SaaS website using Next and Tailwind CSS
+                Next Js and Tailwind CSS
               </p>
               <FaExternalLinkAlt className="text-white mt-1 m-auto" />
             </div>
@@ -147,6 +148,27 @@ const Projects = () => {
               <h3 className="text-sm md:text-md text-white tracking-wider">
                 Cahva Creamer
               </h3>
+              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
+            </div>
+          </Link>
+          <Link
+            href={"https://leedbuilders-lb.com/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
+          >
+            <Image
+              src={projectImg7}
+              alt=""
+              className="rounded-xl group-hover:opacity-10"
+            />
+            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
+              <h3 className="text-sm md:text-md text-white tracking-wider">
+                LEED Builders
+              </h3>
+              <p className="pb-2 pt-2 text-white text-md md:text-base">
+                Next Js and Tailwind CSS
+              </p>
               <FaExternalLinkAlt className="text-white mt-1 m-auto" />
             </div>
           </Link>
