@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -13,8 +12,8 @@ const Main = () => {
   const router = useRouter();
 
   return (
-    <div className="w-full h-screen text-center md:my-12 my-18">
-      <div className="max-w-[1240px] w-full h-full mx-auto my-5 flex justify-center items-center">
+    <div className="w-full h-screen text-center md:my-12 my-20">
+      <div className="max-w-[1240px] w-full h-full mx-auto flex justify-center items-center">
         <div id="home" className="md:py-12 py-32">
           <p className="uppercase text-sm tracking-widest text-gray-600">
             Lets reach out and build together
