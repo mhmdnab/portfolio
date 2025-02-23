@@ -63,7 +63,7 @@ const Projects = () => {
               className="rounded-xl group-hover:opacity-10"
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-xl md:text-xl text-white tracking-wider">
+              <h3 className="text-sm md:text-xl text-white tracking-wider">
                 Weather App
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
