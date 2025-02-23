@@ -7,6 +7,8 @@ import projectImg4 from "../../public/assets/Screenshot 2024-11-06 224717.png";
 import projectImg5 from "../../public/assets/Screenshot 2024-11-17 213647.png";
 import projectImg6 from "../../public/assets/Screenshot 2025-01-31 142839.png";
 import projectImg7 from "../../public/assets/Screenshot 2025-02-10 131643.png";
+import projectImg8 from "../../public/assets/Screenshot 2025-02-23 172032.png";
+
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -61,7 +63,7 @@ const Projects = () => {
               className="rounded-xl group-hover:opacity-10"
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-md text-white tracking-wider">
+              <h3 className="text-xl md:text-xl text-white tracking-wider">
                 Weather App
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
@@ -82,7 +84,7 @@ const Projects = () => {
               className="rounded-xl group-hover:opacity-10"
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-md text-white tracking-wider">
+              <h3 className="text-sm md:text-xl text-white tracking-wider">
                 Ahmad Naboulsi's Portfolio
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
@@ -103,7 +105,7 @@ const Projects = () => {
               className="rounded-xl group-hover:opacity-10"
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-md text-white tracking-wider">
+              <h3 className="text-sm md:text-xl text-white tracking-wider">
                 D.one Perfumes
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
@@ -124,11 +126,54 @@ const Projects = () => {
               className="rounded-xl group-hover:opacity-10"
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-md text-white tracking-wider">
+              <h3 className="text-sm md:text-xl text-white tracking-wider">
                 KAYZONE Agnecy
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
                 Next Js and Tailwind CSS
+              </p>
+              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
+            </div>
+          </Link>
+
+          <Link
+            href={"https://leedbuilders-lb.com/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
+          >
+            <Image
+              src={projectImg7}
+              alt=""
+              className="rounded-xl group-hover:opacity-10"
+            />
+            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
+              <h3 className="text-sm md:text-xl text-white tracking-wider">
+                LEED Builders
+              </h3>
+              <p className="pb-2 pt-2 text-white text-md md:text-base">
+                Next Js and Tailwind CSS
+              </p>
+              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
+            </div>
+          </Link>
+          <Link
+            href={"https://proled.life/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
+          >
+            <Image
+              src={projectImg8}
+              alt=""
+              className="rounded-xl group-hover:opacity-10"
+            />
+            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
+              <h3 className="text-sm md:text-xl text-white tracking-wider">
+                ProLed
+              </h3>
+              <p className="pb-2 pt-2 text-white text-md md:text-base">
+                Shopify
               </p>
               <FaExternalLinkAlt className="text-white mt-1 m-auto" />
             </div>
@@ -145,29 +190,11 @@ const Projects = () => {
               className="rounded-xl group-hover:opacity-10"
             />
             <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-md text-white tracking-wider">
+              <h3 className="text-sm md:text-xl text-white tracking-wider">
                 Cahva Creamer
               </h3>
-              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
-            </div>
-          </Link>
-          <Link
-            href={"https://leedbuilders-lb.com/"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
-          >
-            <Image
-              src={projectImg7}
-              alt=""
-              className="rounded-xl group-hover:opacity-10"
-            />
-            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-md text-white tracking-wider">
-                LEED Builders
-              </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
-                Next Js and Tailwind CSS
+                Shopify
               </p>
               <FaExternalLinkAlt className="text-white mt-1 m-auto" />
             </div>
