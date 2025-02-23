@@ -12,7 +12,7 @@ const Main = () => {
   const router = useRouter();
 
   return (
-    <div className="w-full h-screen text-center md:my-12 my-20">
+    <div className="w-full h-screen text-center md:my-12 my-28">
       <div className="max-w-[1240px] w-full h-full mx-auto flex justify-center items-center">
         <div id="home" className="md:py-12 py-32">
           <p className="uppercase text-sm tracking-widest text-gray-600">
