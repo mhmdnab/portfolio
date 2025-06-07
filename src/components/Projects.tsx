@@ -8,6 +8,7 @@ import projectImg5 from "../../public/assets/Screenshot 2024-11-17 213647.png";
 import projectImg6 from "../../public/assets/Screenshot 2025-01-31 142839.png";
 import projectImg7 from "../../public/assets/Screenshot 2025-02-10 131643.png";
 import projectImg8 from "../../public/assets/Screenshot 2025-02-23 172032.png";
+import projectImg9 from "../../public/assets/Screenshot 2025-06-07 200918.png";
 
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -68,6 +69,27 @@ const Projects = () => {
               </h3>
               <p className="pb-2 pt-2 text-white text-md md:text-base">
                 React Js, CSS, JavaScript
+              </p>
+              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
+            </div>
+          </Link>
+          <Link
+            href={"https://senior-frontend-eta.vercel.app"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
+          >
+            <Image
+              src={projectImg9}
+              alt=""
+              className="rounded-xl group-hover:opacity-10"
+            />
+            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
+              <h3 className="text-sm md:text-xl text-white tracking-wider">
+                Dakesh - A Bartering platform
+              </h3>
+              <p className="pb-2 pt-2 text-white text-md md:text-base">
+                Next Js, Node Js, Express js, MongoDB, Tailwind CSS
               </p>
               <FaExternalLinkAlt className="text-white mt-1 m-auto" />
             </div>
