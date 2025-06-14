@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import projectImg from "../../public/assets/project1-ss.png";
 import projectImg2 from "../../public/assets/project2-ss.png";
-import projectImg3 from "../../public/assets/projectImage3.png";
 import projectImg4 from "../../public/assets/Screenshot 2024-11-06 224717.png";
 import projectImg5 from "../../public/assets/Screenshot 2024-11-17 213647.png";
 import projectImg6 from "../../public/assets/Screenshot 2025-01-31 142839.png";
@@ -13,6 +11,36 @@ import projectImg9 from "../../public/assets/Screenshot 2025-06-07 200918.png";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
+const ProjectCard = ({
+  href,
+  imgSrc,
+  title,
+  stack,
+}: {
+  href: string;
+  imgSrc: any;
+  title: string;
+  stack: string;
+}) => (
+  <Link
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
+  >
+    <Image
+      src={imgSrc}
+      alt={title}
+      className="rounded-xl group-hover:opacity-10"
+    />
+    <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
+      <h3 className="text-sm md:text-xl text-white tracking-wider">{title}</h3>
+      <p className="pb-2 pt-2 text-white text-md md:text-base">{stack}</p>
+      <FaExternalLinkAlt className="text-white mt-1 m-auto" />
+    </div>
+  </Link>
+);
+
 const Projects = () => {
   return (
     <div className="w-full" id="projects">
@@ -21,209 +49,84 @@ const Projects = () => {
           Projects
         </p>
         <h2 className="py-4">What I have built</h2>
-        <p className="pb-4 pt-2 ">
+        <p className="pb-4 pt-2">
           Here is a selection of projects from my portfolio that demonstrate a
           breadth of frontend and backend work across various frameworks. Please
           feel free to explore my{" "}
           <a
-            href={"https://www.github.com/moesecc"}
-            rel="noopener noreferrer"
+            href="https://www.github.com/moesecc"
             target="_blank"
+            rel="noopener noreferrer"
             className="underline hover:text-[#147b86]"
           >
             GitHub
           </a>{" "}
           for additional examples of my work.
         </p>
-        {/**/}
-        <div className=" justify-center items-center m-auto py-28  grid grid-cols-1 md:grid-cols-2 gap-8 ">
-          <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] cursor-pointer hover:scale-105 ease-out duration-200">
-            <Image
-              src={projectImg}
-              alt=""
-              className="rounded-xl group-hover:opacity-10"
-            />
-            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-              <h3 className="text-sm md:text-md text-white tracking-wider text-center">
-                Full Stack E-commerce website
-              </h3>
-              <p className="pb-4 pt-2 text-white text-center text-md md:text-base">
-                Mongo DB, Express Js, Redux Js, React Js and Node Js
-              </p>
-            </div>
-          </div>
-          <Link
-            href={"https://weatherappmoesecc.netlify.app"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
-          >
-            <Image
-              src={projectImg2}
-              alt=""
-              className="rounded-xl group-hover:opacity-10"
-            />
-            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-xl text-white tracking-wider">
-                Weather App
-              </h3>
-              <p className="pb-2 pt-2 text-white text-md md:text-base">
-                React Js, CSS, JavaScript
-              </p>
-              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
-            </div>
-          </Link>
-          <Link
-            href={"https://senior-frontend-eta.vercel.app"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
-          >
-            <Image
-              src={projectImg9}
-              alt=""
-              className="rounded-xl group-hover:opacity-10"
-            />
-            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-xl text-white tracking-wider">
-                Dakesh - A Bartering platform
-              </h3>
-              <p className="pb-2 pt-2 text-white text-md md:text-base">
-                Next Js, Node Js, Express js, MongoDB, Tailwind CSS
-              </p>
-              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
-            </div>
-          </Link>
-          <Link
-            href={"https://ahmadnaboulsi.vercel.app/"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
-          >
-            <Image
-              src={projectImg3}
-              alt=""
-              className="rounded-xl group-hover:opacity-10"
-            />
-            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-xl text-white tracking-wider">
-                Ahmad Naboulsi's Portfolio
-              </h3>
-              <p className="pb-2 pt-2 text-white text-md md:text-base">
-                Next Js and Tailwind CSS
-              </p>
-              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
-            </div>
-          </Link>
-          <Link
-            href={"https://doneperfumes.vercel.app/"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
-          >
-            <Image
-              src={projectImg4}
-              alt=""
-              className="rounded-xl group-hover:opacity-10"
-            />
-            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-xl text-white tracking-wider">
-                D.one Perfumes
-              </h3>
-              <p className="pb-2 pt-2 text-white text-md md:text-base">
-                Next Js and Tailwind CSS
-              </p>
-              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
-            </div>
-          </Link>
-          <Link
-            href={"https://kayzone.agency/"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
-          >
-            <Image
-              src={projectImg5}
-              alt=""
-              className="rounded-xl group-hover:opacity-10"
-            />
-            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-xl text-white tracking-wider">
-                KAYZONE Agnecy
-              </h3>
-              <p className="pb-2 pt-2 text-white text-md md:text-base">
-                Next Js and Tailwind CSS
-              </p>
-              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
-            </div>
-          </Link>
 
-          <Link
-            href={"https://leedbuilders-lb.com/"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
-          >
-            <Image
-              src={projectImg7}
-              alt=""
-              className="rounded-xl group-hover:opacity-10"
-            />
-            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-xl text-white tracking-wider">
-                LEED Builders
-              </h3>
-              <p className="pb-2 pt-2 text-white text-md md:text-base">
-                Next Js and Tailwind CSS
-              </p>
-              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
-            </div>
-          </Link>
-          <Link
-            href={"https://proled.life/"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
-          >
-            <Image
-              src={projectImg8}
-              alt=""
-              className="rounded-xl group-hover:opacity-10"
-            />
-            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-xl text-white tracking-wider">
-                ProLed
-              </h3>
-              <p className="pb-2 pt-2 text-white text-md md:text-base">
-                Shopify
-              </p>
-              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
-            </div>
-          </Link>
-          <Link
-            href={"https://mycahva.com/"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 hover:shadow-[#0ea2b3] rounded-xl group hover:bg-gradient-to-r from-[#147b86] to-[#055b64] hover:scale-105 ease-in duration-200"
-          >
-            <Image
-              src={projectImg6}
-              alt=""
-              className="rounded-xl group-hover:opacity-10"
-            />
-            <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center flex-col items-center">
-              <h3 className="text-sm md:text-xl text-white tracking-wider">
-                Cahva Creamer
-              </h3>
-              <p className="pb-2 pt-2 text-white text-md md:text-base">
-                Shopify
-              </p>
-              <FaExternalLinkAlt className="text-white mt-1 m-auto" />
-            </div>
-          </Link>
+        {/* Real Life Projects */}
+        <h3 className="text-lg font-semibold text-[#0c4f57] mt-12 mb-4">
+          Real Life Projects
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <ProjectCard
+            href="https://senior-frontend-eta.vercel.app"
+            imgSrc={projectImg9}
+            title="Dakesh - A Bartering platform"
+            stack="Next Js, Node Js, Express js, MongoDB, Tailwind CSS"
+          />
+          <ProjectCard
+            href="https://kayzone.agency/"
+            imgSrc={projectImg5}
+            title="KAYZONE Agency"
+            stack="Next Js and Tailwind CSS"
+          />
+          <ProjectCard
+            href="https://leedbuilders-lb.com/"
+            imgSrc={projectImg7}
+            title="LEED Builders"
+            stack="Next Js and Tailwind CSS"
+          />
+        </div>
+
+        {/* Personal Practice Projects */}
+        <h3 className="text-lg font-semibold text-[#0c4f57] mt-12 mb-4">
+          Personal Practice Projects
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <ProjectCard
+            href="https://weatherappmoesecc.netlify.app"
+            imgSrc={projectImg2}
+            title="Weather App"
+            stack="React Js, CSS, JavaScript"
+          />
+          <ProjectCard
+            href="https://doneperfumes.vercel.app/"
+            imgSrc={projectImg4}
+            title="D.one Perfumes"
+            stack="Next Js and Tailwind CSS"
+          />
+        </div>
+
+        {/* Shopify Projects */}
+        <h3 className="text-lg font-semibold text-[#0c4f57] mt-12 mb-4">
+          Shopify Projects
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <ProjectCard
+            href="https://proled.life/"
+            imgSrc={projectImg8}
+            title="ProLed"
+            stack="Shopify"
+          />
+          <ProjectCard
+            href="https://mycahva.com/"
+            imgSrc={projectImg6}
+            title="Cahva Creamer"
+            stack="Shopify"
+          />
         </div>
       </div>
-      <br />
     </div>
   );
 };
