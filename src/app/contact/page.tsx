@@ -73,31 +73,6 @@ const Contact = () => {
             Send Message
           </button>
         </form>
-
-        {/* Social Links */}
-        <div className="flex justify-center mt-10 gap-6 text-[#0c4f57]">
-          <a
-            href="mailto:your@email.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaEnvelope size={22} />
-          </a>
-          <a
-            href="https://github.com/moesecc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub size={22} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/YOUR-LINKEDIN"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin size={22} />
-          </a>
-        </div>
       </div>
     </div>
   );

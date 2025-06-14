@@ -43,7 +43,7 @@ const Main = () => {
               <FaLinkedinIn className="text-xl" />
             </Link>
             <Link
-              href={"https://www.github.com/moesecc"}
+              href={"https://www.github.com/mhmdnab"}
               rel="noopener noreferrer"
               target="_blank"
               className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#47787d] hover:shadow-xl md:p-4 p-3 cursor-pointer hover:scale-105 ease-in duration-100"

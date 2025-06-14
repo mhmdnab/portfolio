@@ -46,7 +46,7 @@ const Footer = () => {
               className="hover:scale-110 transition-transform duration-200"
             />
           </a>
-          <a href="https://github.com/moesecc" rel="noopener" target="_blank">
+          <a href="https://github.com/mhmdnab" rel="noopener" target="_blank">
             <FaGithub
               size={27}
               className="hover:scale-110 transition-transform duration-200"
