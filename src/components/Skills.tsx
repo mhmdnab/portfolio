@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import jsicon from "../../public/assets/js-icon.png";
 import html from "../../public/assets/html.png";
 import css from "../../public/assets/css-icon.png";
@@ -9,102 +12,130 @@ import nodejs from "../../public/assets/nodejs-icon.png";
 import reactjs from "../../public/assets/react-icon.png";
 import nextjs from "../../public/assets/nextjs-icon.png";
 
+const skills = [
+  {
+    name: "HTML 5",
+    icon: html,
+    color: "#ff4a00",
+    description: "Semantic markup & accessibility",
+  },
+  {
+    name: "JavaScript",
+    icon: jsicon,
+    color: "#f7df1f",
+    description: "ES6+ & modern features",
+  },
+  {
+    name: "CSS",
+    icon: css,
+    color: "#0277bd",
+    description: "Responsive design & animations",
+  },
+  {
+    name: "React",
+    icon: reactjs,
+    color: "#0ea2b3",
+    description: "Hooks, context & performance",
+  },
+  {
+    name: "Next.js",
+    icon: nextjs,
+    color: "#000000",
+    description: "SSR, SSG & App Router",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
+    color: "#43aab5",
+    description: "Utility-first styling",
+  },
+  {
+    name: "MongoDB",
+    icon: mongo,
+    color: "#5e9029",
+    description: "NoSQL database design",
+  },
+  {
+    name: "Node.js",
+    icon: nodejs,
+    color: "#24a769",
+    description: "Server-side JavaScript",
+  },
+];
+
 const Skills = () => {
   return (
-    <div className="w-full lg:h-screen p-2 py-7" id="skills">
-      <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full my-6">
-        <p className="uppercase tracking-widest text-[#0c4f57] text-2xl">
-          My Skills
-        </p>
-        <h2 className="py-4">What do I do</h2>
-        <p className="py-4 text-xl">
-          I prioritize minimalist design and enjoy crafting interactive
-          experiences from scratch, using these technologies listed below.
-        </p>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-xs md:text-lg py-4 ">
-          <div className="p-6 shadow-2xl rounded-xl hover:scale-105 ease-in duration-200 hover:shadow-[#ff4a00]">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
-              <div className="m-auto">
-                <Image width="96" height="96" src={html} alt="html" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h3 className="text-base md:text-xl">HTML 5</h3>
-              </div>
-            </div>
-          </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#f7df1f]">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
-              <div className="m-auto">
-                <Image width="96" height="96" src={jsicon} alt="javascript" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h3 className="text-base md:text-xl">Javascript</h3>
-              </div>
-            </div>
-          </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#0277bd]">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
-              <div className="m-auto">
-                <Image width="96" height="96" src={css} alt="css" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h3 className="text-base md:text-xl">CSS</h3>
-              </div>
-            </div>
-          </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#0ea2b3]">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
-              <div className="m-auto">
-                <Image width="96" height="96" src={reactjs} alt="React" />
-              </div>
-              <div className="flex flex-col items-center justify-center ">
-                <h3 className="text-base md:text-xl">React</h3>
-              </div>
-            </div>
-          </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#000000]">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
-              <div className="m-auto">
-                <Image width="96" height="96" src={nextjs} alt="next" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h3 className="text-base md:text-xl">Next</h3>
-              </div>
-            </div>
-          </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#43aab5]">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
-              <div className="m-auto">
-                <Image width="96" height="96" src={tailwind} alt="tailwind" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h3 className="text-base md:text-xl">Tailwind CSS</h3>
-              </div>
-            </div>
-          </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#5e9029]">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
-              <div className="m-auto">
-                <Image width="96" height="96" src={mongo} alt="mongodb" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h3 className="text-base md:text-xl">Mongo DB</h3>
-              </div>
-            </div>
-          </div>
-          <div className="p-6 shadow-2xl rounded-lg hover:scale-105 ease-in duration-200 hover:shadow-[#24a769]">
-            <div className="grid grid-cols-2 gap-4 justify-center items-center">
-              <div className="m-auto">
-                <Image width="96" height="96" src={nodejs} alt="node js" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h3 className="text-base md:text-xl">Node</h3>
-              </div>
-            </div>
-          </div>
+    <section className="w-full py-16 lg:py-24" id="skills">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <p className="text-xl tracking-widest uppercase text-[#0c4f57]">
+            My Skills
+          </p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+            What do I do
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
+            I prioritize minimalist design and enjoy crafting interactive
+            experiences from scratch, using these technologies listed below.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+          {skills.map((skill, index) => (
+            <Card
+              key={skill.name}
+              className="group relative overflow-hidden border-0 bg-white shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-2"
+              style={
+                {
+                  boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+                  "--hover-shadow": `0 20px 40px ${skill.color}40`,
+                } as React.CSSProperties
+              }
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = `0 20px 40px ${skill.color}40`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0 10px 25px rgba(0,0,0,0.1)";
+              }}
+            >
+              <CardContent className="flex flex-col items-center justify-center p-6 text-center">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-50 transition-colors duration-300 group-hover:bg-gray-100 sm:h-20 sm:w-20">
+                  <Image
+                    src={skill.icon || "/placeholder.svg"}
+                    alt={`${skill.name} icon`}
+                    width={48}
+                    height={48}
+                    className="transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12"
+                  />
+                </div>
+
+                <h3 className="text-sm font-semibold text-gray-900 sm:text-base lg:text-lg">
+                  {skill.name}
+                </h3>
+
+                <p className="mt-2 text-xs text-muted-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:text-sm">
+                  {skill.description}
+                </p>
+
+                {/* Animated border */}
+                <div
+                  className="absolute inset-x-0 bottom-0 h-1 scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+                  style={{ backgroundColor: skill.color }}
+                />
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Additional info */}
+        <div className="mt-16 text-center">
+          <p className="text-sm text-muted-foreground">
+            Always learning and exploring new technologies to stay current with
+            industry trends.
+          </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

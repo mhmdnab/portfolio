@@ -1,77 +1,82 @@
 "use client";
+
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React from "react";
-import { Cedarville_Cursive, Playfair_Display } from "next/font/google";
-import { AiOutlineMail } from "react-icons/ai";
-import { BsWhatsapp } from "react-icons/bs";
-import { FaGithub, FaLinkedinIn, FaLaptopCode } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Github, Mail, ArrowRight } from "lucide-react";
+import ScrollLink from "./ScrollLink";
 
-const cc = Cedarville_Cursive({ subsets: ["latin"], weight: "400" });
-const Main = () => {
-  const router = useRouter();
-
+export default function Hero({
+  name = "Mohammad Nab",
+  role = "Next.js & MERN Stack Developer",
+  pitch = "I design and build fast, accessible, and SEO‑ready web apps that ship business results.",
+}: {
+  name?: string;
+  role?: string;
+  pitch?: string;
+}) {
   return (
-    <div className="w-full h-screen text-center md:my-12 my-28">
-      <div className="max-w-[1240px] w-full h-full mx-auto flex justify-center items-center">
-        <div id="home" className="md:py-12 py-32">
-          <p className="uppercase text-sm tracking-widest text-gray-600">
-            Lets reach out and build together
-          </p>
-          <h1 className="py-4">
-            Hey, I am <span className={cc.className}>Mohamad</span>
-          </h1>
-          <h1 className="py-2">
-            A Web Developer <FaLaptopCode className="text-5xl m-auto mt-8" />
-          </h1>
+    <section id="hero" className="md:px-12 px-2 pt-32">
+      <div className="mx-auto max-w-4xl text-center">
+        <h1 className="my-6 text-balance text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
+          Building high‑quality web apps with{" "}
+          <span className="underline decoration-[#0c4f57] underline-offset-4">
+            Next.js
+          </span>{" "}
+          and the MERN stack
+        </h1>
+        <div className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm text-muted-foreground">
+          <span
+            className="h-2 w-2 rounded-full bg-[#0c4f57]"
+            aria-hidden="true"
+          />
+          Available for new projects
+        </div>
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
+          {pitch}
+        </p>
 
-          <p className="py-4 text-gray-600 max-w-[70%] m-auto">
-            I am a MERN web developer, creating sleek and functional websites.
-            Proficient in HTML, CSS, JavaScript (React Js and Next Js), MongoDB,
-            and Node.js, I stay current with web trends through continuous
-            learning. I thrive on collaborative projects, ensuring websites are
-            both visually appealing and user-friendly.
-          </p>
-          <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
-            {/* Make links here for each logo for my social media */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <Button className="bg-[#0c4f57] hover:bg-[#093b41]" asChild size="lg">
+            <ScrollLink href="#projects">
+              See projects
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </ScrollLink>
+          </Button>
+          <Button asChild size="lg" variant="outline">
+            <Link href="mailto:mhmdnab004@gmail.com">
+              <Mail className="mr-2 h-4 w-4" />
+              Email me
+            </Link>
+          </Button>
+          <Button asChild size="lg" variant="ghost">
             <Link
-              href={"https://www.linkedin.com/in/mohamad-el-naboulsi-6480311aa"}
-              rel="noopener noreferrer"
+              href="https://github.com/mhmdnab"
               target="_blank"
-              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#47787d] hover:shadow-xl md:p-4 p-3 cursor-pointer hover:scale-105 ease-in duration-100"
+              rel="noreferrer"
             >
-              <FaLinkedinIn className="text-xl" />
+              <Github className="mr-2 h-4 w-4" />
+              GitHub
             </Link>
-            <Link
-              href={"https://www.github.com/mhmdnab"}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#47787d] hover:shadow-xl md:p-4 p-3 cursor-pointer hover:scale-105 ease-in duration-100"
-            >
-              <FaGithub className="text-xl" />
-            </Link>
-            <Link
-              href={"mailto:mhmdnab004@gmail.com"}
-              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#47787d] hover:shadow-xl md:p-4 p-3 cursor-pointer hover:scale-105 ease-in duration-100"
-            >
-              <AiOutlineMail className="text-xl" />
-            </Link>
-            <Link
-              href={"https://wa.link/ssvq0l"}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="rounded-full shadow-lg shadow-gray-400 hover:shadow-[#47787d] hover:shadow-xl md:p-4 p-3 cursor-pointer hover:scale-105 ease-in duration-100"
-            >
-              <BsWhatsapp className="text-xl" />
-            </Link>
-            {/* <div className="rounded-full shadow-lg shadow-gray-400 p-5 cursor-pointer hover:scale-110 ease-in duration-300">
-              <BsFillPersonLinesFill />
-            </div> */}
-          </div>
+          </Button>
+        </div>
+
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          {[
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Tailwind",
+          ].map((t) => (
+            <Badge key={t} variant="secondary" className="rounded-full">
+              {t}
+            </Badge>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Main;
+}

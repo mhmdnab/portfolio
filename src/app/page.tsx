@@ -1,6 +1,6 @@
 import About from "@/components/About";
-import Main from "@/components/Main";
-import Projects from "@/components/Projects";
+import Hero from "@/components/Main";
+import ProjectsGrid from "@/components/Projects";
 import Skills from "@/components/Skills";
 
 export default function Home() {
@@ -9,10 +9,10 @@ export default function Home() {
       className="flex min-h-screen flex-col items-center justify-between p-19 mx-4"
       id="top"
     >
-      <Main />
+      <Hero />
       <About />
       <Skills />
-      <Projects />
+      <ProjectsGrid />
     </main>
   );
 }

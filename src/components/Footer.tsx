@@ -1,69 +1,53 @@
-import React from "react";
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
-import { AiOutlineMail } from "react-icons/ai";
 import { Cedarville_Cursive } from "next/font/google";
-
-import { BsWhatsapp } from "react-icons/bs";
 import Link from "next/link";
+import { Button } from "./ui/button";
+import { ExternalLink, Github, Mail, Instagram } from "lucide-react";
+import ScrollLink from "./ScrollLink";
 
 const cc = Cedarville_Cursive({ subsets: ["latin"], weight: "400" });
 const Footer = () => {
   return (
-    <div
-      id="contact"
-      className="p-4 m-auto items-center w-full flex-col justify-center bg-gradient-to-r from-[#147b86] to-[#055b64] border shadow-2xl"
-    >
-      <div className="items-center py-4">
-        <h1
-          className={`${cc.className} md:text-4xl text-3xl text-center text-[#caf3f8] mb-2`}
-        >
-          <Link href="/">moe</Link>
-        </h1>
-        <div className="text-[#caf3f8] w-auto p-4 text-center flex justify-center gap-8 mb-2">
-          <a href="mailto:mhmdnab004@gmail.com" rel="noopener" target="_blank">
-            <AiOutlineMail
-              size={28}
-              className="hover:scale-110 transition-transform duration-200"
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/mhmadnab/"
-            rel="noopener"
-            target="_blank"
-          >
-            <FaInstagram
-              size={27}
-              className="hover:scale-110 transition-transform duration-200"
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mohamad-el-naboulsi-6480311aa/"
-            rel="noopener"
-            target="_blank"
-          >
-            <FaLinkedin
-              size={27}
-              className="hover:scale-110 transition-transform duration-200"
-            />
-          </a>
-          <a href="https://github.com/mhmdnab" rel="noopener" target="_blank">
-            <FaGithub
-              size={27}
-              className="hover:scale-110 transition-transform duration-200"
-            />
-          </a>
-          <a href="https://wa.link/ssvq0l" rel="noopener" target="_blank">
-            <BsWhatsapp
-              size={27}
-              className="hover:scale-110 transition-transform duration-200"
-            />
-          </a>
+    <footer className="mt-14 border-t py-8 px-5 md:px-12 text-sm text-muted-foreground">
+      <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+        <p>{new Date().getFullYear()} © Mohammad Nab. All rights reserved.</p>
+        <div className="flex items-center gap-3">
+          <Button asChild variant="ghost" size="sm">
+            <Link href="mailto:mhmdnab004@gmail.com" aria-label="Email">
+              <Mail className="mr-2 h-4 w-4" />
+              Email
+            </Link>
+          </Button>
+          <Button asChild variant="ghost" size="sm">
+            <Link
+              href="https://github.com/mhmdnab"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <Github className="mr-2 h-4 w-4" />
+              GitHub
+            </Link>
+          </Button>
+          <Button asChild variant="ghost" size="sm">
+            <Link
+              href="https://instagram.com/mhmdnabdev"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
+              <Instagram className="mr-2 h-4 w-4" />
+              Instagram
+            </Link>
+          </Button>
+          <Button asChild variant="ghost" size="sm">
+            <ScrollLink href="#projects" aria-label="See projects">
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Projects
+            </ScrollLink>
+          </Button>
         </div>
-        <p className="text-[#caf3f8] text-center text-md">
-          Lets reach out and build together
-        </p>
       </div>
-    </div>
+    </footer>
   );
 };
 
