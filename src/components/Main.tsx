@@ -17,7 +17,7 @@ export default function Hero({
 }) {
   return (
     <section id="hero" className="md:px-12 px-2 pt-32">
-      <div className="mx-auto max-w-4xl text-center">
+      <div className="mx-auto w-4xl text-center">
         <h1 className="my-6 text-balance text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
           Building high‑quality web apps with{" "}
           <span className="underline decoration-[#0c4f57] underline-offset-4">

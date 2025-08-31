@@ -66,7 +66,7 @@ const skills = [
 const Skills = () => {
   return (
     <section className="w-full py-16 lg:py-24" id="skills">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl md:px-12 px-2">
         <div className="text-center">
           <p className="text-xl tracking-widest uppercase text-[#0c4f57]">
             My Skills

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 import { Cedarville_Cursive } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -211,17 +212,35 @@ const Navbar = () => {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={cn(
-              "rounded-lg p-2 transition-colors duration-200",
-              "hover:bg-[#0c4f57]/10"
+              "relative rounded-xl p-2.5 transition-all duration-300 ease-out",
+              "border border-[#0c4f57]/20 bg-white/80 backdrop-blur-sm",
+              "hover:border-[#0c4f57]/30 hover:bg-[#0c4f57]/5 hover:shadow-md hover:shadow-[#0c4f57]/10",
+              "active:scale-95 active:bg-[#0c4f57]/10",
+              "focus:outline-none focus:ring-2 focus:ring-[#0c4f57]/20 focus:ring-offset-1",
+              mobileMenuOpen &&
+                "border-[#0c4f57]/40 bg-[#0c4f57]/10 shadow-md shadow-[#0c4f57]/15"
             )}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+            <div className="relative h-5 w-5">
+              <Menu
+                className={cn(
+                  "absolute inset-0 h-5 w-5 text-[#0c4f57] transition-all duration-300",
+                  mobileMenuOpen
+                    ? "rotate-90 scale-0 opacity-0"
+                    : "rotate-0 scale-100 opacity-100"
+                )}
+              />
+              <X
+                className={cn(
+                  "absolute inset-0 h-5 w-5 text-[#0c4f57] transition-all duration-300",
+                  mobileMenuOpen
+                    ? "rotate-0 scale-100 opacity-100"
+                    : "-rotate-90 scale-0 opacity-0"
+                )}
+              />
+            </div>
           </button>
         </div>
 
@@ -243,7 +262,7 @@ const Navbar = () => {
           )}
           data-mobile-menu
         >
-          <div className="border-t border-[#0c4f57]/10 bg-white/95 backdrop-blur-xl shadow-lg">
+          <div className="border-t border-[#0c4f57]/10 bg-white/95 backdrop-blur-xl shadow-lg w-full">
             <ul className="py-2">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;
