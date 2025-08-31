@@ -213,7 +213,7 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={cn(
               "relative rounded-xl p-2.5 transition-all duration-300 ease-out",
-              "border border-[#0c4f57]/20 bg-white/80 backdrop-blur-sm",
+              "border border-[#0c4f57]/20 bg-white/70 backdrop-blur-sm",
               "hover:border-[#0c4f57]/30 hover:bg-[#0c4f57]/5 hover:shadow-md hover:shadow-[#0c4f57]/10",
               "active:scale-95 active:bg-[#0c4f57]/10",
               "focus:outline-none focus:ring-2 focus:ring-[#0c4f57]/20 focus:ring-offset-1",
