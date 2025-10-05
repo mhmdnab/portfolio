@@ -13,6 +13,7 @@ import {
   CheckCircle,
   XCircle,
 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
@@ -39,31 +40,28 @@ export default function ContactPage() {
     setFeedbackMessage("");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
         },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      if (result.text === "OK") {
         setStatus("success");
         setFeedbackMessage("Your message has been sent successfully!");
-        setFormData({ name: "", email: "", message: "" }); // Clear form
+        setFormData({ name: "", email: "", message: "" });
       } else {
-        setStatus("error");
-        setFeedbackMessage(
-          data.error || "Failed to send message. Please try again."
-        );
+        throw new Error("Unexpected response from EmailJS");
       }
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error("EmailJS error:", error);
       setStatus("error");
       setFeedbackMessage(
-        "An unexpected error occurred. Please try again later."
+        "Failed to send your message. Please try again later."
       );
     } finally {
       setLoading(false);
