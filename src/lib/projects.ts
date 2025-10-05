@@ -44,8 +44,6 @@ export const projects: Project[] = [
     category: "real-life",
   },
 
-  // Personal Practice Projects
-
   {
     title: "D.one Perfumes",
     description: "Elegant e-commerce site for luxury perfumes",
