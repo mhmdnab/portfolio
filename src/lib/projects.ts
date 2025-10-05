@@ -23,7 +23,7 @@ export const projects: Project[] = [
       "A comprehensive bartering platform built with modern web technologies",
     tags: ["Next.js", "Node.js", "Express", "MongoDB", "Tailwind"],
     href: "https://senior-frontend-eta.vercel.app",
-    image: projectImg9,
+    image: "/assets/Screenshot 2025-06-07 200918.png",
     category: "real-life",
   },
   {
@@ -32,7 +32,7 @@ export const projects: Project[] = [
       "Modern agency website with sleek design and smooth animations",
     tags: ["Next.js", "Tailwind"],
     href: "https://kayzone.agency/",
-    image: projectImg5,
+    image: "/assets/Screenshot 2024-11-17 213647.png",
     category: "real-life",
   },
   {
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     description: "Professional construction company website with modern design",
     tags: ["Next.js", "Tailwind"],
     href: "https://leedbuilders-lb.com/",
-    image: projectImg7,
+    image: "/assets/Screenshot 2025-02-10 131643.png",
     category: "real-life",
   },
 
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     description: "Elegant e-commerce site for luxury perfumes",
     tags: ["Next.js", "Tailwind"],
     href: "https://doneperfumes.vercel.app/",
-    image: projectImg4,
+    image: "/assets/Screenshot 2024-11-06 224717.png",
     category: "real-life",
   },
 
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     description: "Professional LED lighting solutions e-commerce store",
     tags: ["Shopify"],
     href: "https://proled.life/",
-    image: projectImg8,
+    image: "/assets/Screenshot 2025-02-23 172032.png",
     category: "shopify",
   },
   {
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     description: "Premium coffee creamer brand e-commerce store",
     tags: ["Shopify"],
     href: "https://mycahva.com/",
-    image: projectImg6,
+    image: "/assets/Screenshot 2025-01-31 142839.png",
     category: "shopify",
   },
 ];

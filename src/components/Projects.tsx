@@ -1,5 +1,4 @@
 "use client";
-
 import type React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -102,7 +101,7 @@ export default function ProjectsGrid({
       </div>
 
       {/* Projects */}
-      <div className="mt-12">
+      <div className="mt-12 md:px-32 px-5">
         {Object.entries(groupedProjects).map(
           ([categoryId, categoryProjects]) => {
             if (categoryProjects.length === 0) return null;
@@ -131,12 +130,10 @@ export default function ProjectsGrid({
                         className="block"
                       >
                         <div className="relative aspect-[16/10] w-full overflow-hidden">
-                          <Image
-                            src={project.image || "/placeholder.svg"}
+                          <img
+                            src={project.image}
                             alt={project.title + " preview"}
-                            fill
-                            sizes="(min-width: 768px) 50vw, 100vw"
-                            className="object-cover transition-opacity duration-200 group-hover:opacity-10"
+                            className="object-cover w-full h-full transition-opacity duration-200 group-hover:opacity-10"
                           />
                           <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-r from-[#147b86] to-[#055b64] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                             <h3 className="text-center text-lg font-semibold text-white tracking-wider md:text-xl">
