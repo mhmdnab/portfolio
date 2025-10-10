@@ -195,7 +195,9 @@ export default function ContactPage() {
                 {/* ✅ Cloudflare Turnstile widget with callback */}
                 <div
                   className="cf-turnstile"
-                  data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                  data-sitekey={`${
+                    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""
+                  }`}
                   data-callback="onTurnstileSuccess"
                 ></div>
 
