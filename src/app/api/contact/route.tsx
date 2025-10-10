@@ -1,42 +1,37 @@
+// /app/api/contact/route.ts
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { token } = await req.json();
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    const verifyRes = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          secret: process.env.TURNSTILE_SECRET_KEY!,
+          response: token,
+        }),
+      }
+    );
 
-    const mailOptions = {
-      from: email,
-      to: process.env.EMAIL_RECEIVER,
-      subject: `New Portfolio Inquiry from ${name}`,
-      text: `
-You have received a new message through your portfolio contact form.
+    const verifyData = await verifyRes.json();
+    console.log("Turnstile verification result:", verifyData);
 
-Name: ${name}
-Email: ${email}
+    if (!verifyData.success) {
+      return NextResponse.json(
+        { success: false, error: "Turnstile verification failed" },
+        { status: 400 }
+      );
+    }
 
-Message:
-${message}
-
----
-This message was submitted via your personal website.
-  `.trim(),
-    };
-
-    await transporter.sendMail(mailOptions);
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error("Verification error:", error);
     return NextResponse.json(
-      { success: false, error: "Failed to send email." },
+      { success: false, error: "Server error" },
       { status: 500 }
     );
   }

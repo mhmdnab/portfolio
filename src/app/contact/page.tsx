@@ -13,9 +13,10 @@ import {
   CheckCircle,
   XCircle,
 } from "lucide-react";
-import emailjs from "@emailjs/browser";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Script from "next/script";
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -26,6 +27,7 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
   const [feedbackMessage, setFeedbackMessage] = useState("");
+  const [token, setToken] = useState(""); // ✅ Store Turnstile token here
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -40,7 +42,20 @@ export default function ContactPage() {
     setFeedbackMessage("");
 
     try {
-      const result = await emailjs.send(
+      if (!token) throw new Error("Missing Turnstile verification token");
+
+      // Step 1️⃣ — verify Turnstile
+      const verify = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+      const verifyData = await verify.json();
+
+      if (!verifyData.success) throw new Error("Verification failed");
+
+      // Step 2️⃣ — send via EmailJS (client-side only)
+      const res = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
@@ -50,15 +65,16 @@ export default function ContactPage() {
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
-      if (result.text === "OK") {
+
+      if (res.status === 200) {
         setStatus("success");
         setFeedbackMessage("Your message has been sent successfully!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        throw new Error("Unexpected response from EmailJS");
+        throw new Error("EmailJS failed");
       }
     } catch (error) {
-      console.error("EmailJS error:", error);
+      console.error("Contact form error:", error);
       setStatus("error");
       setFeedbackMessage(
         "Failed to send your message. Please try again later."
@@ -175,6 +191,27 @@ export default function ContactPage() {
                     className="min-h-[120px] py-4"
                   />
                 </div>
+
+                {/* ✅ Cloudflare Turnstile widget with callback */}
+                <div
+                  className="cf-turnstile"
+                  data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                  data-callback="onTurnstileSuccess"
+                ></div>
+
+                {/* ✅ Script: initializes Turnstile and updates token */}
+                <Script
+                  id="turnstile-script"
+                  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+                  strategy="afterInteractive"
+                  onReady={() => {
+                    // Attach global callback for Turnstile
+                    // @ts-ignore
+                    window.onTurnstileSuccess = (token: string) =>
+                      setToken(token);
+                  }}
+                />
+
                 <Button
                   type="submit"
                   className="w-full py-6 text-lg bg-[#0c4f57] hover:bg-[#147b86]"
@@ -189,6 +226,7 @@ export default function ContactPage() {
                     "Send Message"
                   )}
                 </Button>
+
                 {status && (
                   <div
                     className={cn(
