@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -27,14 +27,31 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
   const [feedbackMessage, setFeedbackMessage] = useState("");
-  const [token, setToken] = useState(""); // ✅ Store Turnstile token here
+  const [token, setToken] = useState<string>("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const turnstileRef = useRef<HTMLDivElement>(null);
 
+  // 🧠 Initialize Turnstile safely when script is ready
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // @ts-ignore
+      if (window.turnstile && turnstileRef.current) {
+        // @ts-ignore
+        window.turnstile.render(turnstileRef.current, {
+          sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!,
+          callback: (token: string) => {
+            console.log("✅ Turnstile token generated:", token);
+            setToken(token);
+          },
+          "error-callback": () => console.error("❌ Turnstile failed to load"),
+        });
+        clearInterval(interval);
+      }
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
+
+  // 📧 Handle form submit
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -44,17 +61,19 @@ export default function ContactPage() {
     try {
       if (!token) throw new Error("Missing Turnstile verification token");
 
-      // Step 1️⃣ — verify Turnstile via API route
+      // ✅ Step 1: Verify Turnstile token
       const verify = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token }),
       });
+
       const verifyData = await verify.json();
+      console.log("Turnstile verify result:", verifyData);
 
-      if (!verifyData.success) throw new Error("Turnstile verification failed");
+      if (!verifyData.success) throw new Error("Verification failed");
 
-      // Step 2️⃣ — send email via EmailJS directly (client-side)
+      // ✅ Step 2: Send via EmailJS (client-side)
       const res = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
@@ -66,13 +85,12 @@ export default function ContactPage() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
 
-      // ✅ EmailJS returns a string "OK" when successful
-      if (res.status === 200 || res.text === "OK") {
+      if (res.status === 200) {
         setStatus("success");
         setFeedbackMessage("Your message has been sent successfully!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        throw new Error("EmailJS failed to send");
+        throw new Error("EmailJS failed");
       }
     } catch (error) {
       console.error("Contact form error:", error);
@@ -88,6 +106,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-28 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center">
           <p className="text-xl tracking-widest uppercase text-[#0c4f57]">
             Get in Touch
@@ -102,7 +121,7 @@ export default function ContactPage() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2">
-          {/* Contact Info Card */}
+          {/* Contact Info */}
           <Card className="flex flex-col justify-between p-6 shadow-lg">
             <CardHeader className="px-0 pt-0">
               <CardTitle className="text-2xl font-bold text-[#0c4f57]">
@@ -139,7 +158,7 @@ export default function ContactPage() {
             </CardContent>
           </Card>
 
-          {/* Contact Form */}
+          {/* Form */}
           <Card className="p-6 shadow-lg">
             <CardHeader className="px-0 pt-0">
               <CardTitle className="text-2xl font-bold text-[#0c4f57]">
@@ -148,66 +167,62 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent className="px-0">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="sr-only">
-                    Your Name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="py-6"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="sr-only">
-                    Your Email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="py-6"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="sr-only">
-                    Your Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="Your Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    className="min-h-[120px] py-4"
-                  />
-                </div>
+                <Input
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      [e.target.name]: e.target.value,
+                    })
+                  }
+                  required
+                  className="py-6"
+                />
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      [e.target.name]: e.target.value,
+                    })
+                  }
+                  required
+                  className="py-6"
+                />
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      [e.target.name]: e.target.value,
+                    })
+                  }
+                  required
+                  rows={6}
+                  className="min-h-[120px] py-4"
+                />
 
-                {/* ✅ Cloudflare Turnstile widget with callback */}
-                <div
-                  className="cf-turnstile"
-                  data-sitekey={`${
-                    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""
-                  }`}
-                  data-callback={(token: string) => setToken(token)}
-                  data-theme="light"
-                ></div>
+                {/* ✅ Turnstile container */}
+                <div ref={turnstileRef} className="cf-turnstile" />
 
+                {/* ✅ Load Turnstile script */}
                 <Script
+                  id="turnstile-script"
                   src="https://challenges.cloudflare.com/turnstile/v0/api.js"
                   strategy="afterInteractive"
                 />
 
+                {/* Submit button */}
                 <Button
                   type="submit"
                   className="w-full py-6 text-lg bg-[#0c4f57] hover:bg-[#147b86]"
@@ -223,6 +238,7 @@ export default function ContactPage() {
                   )}
                 </Button>
 
+                {/* Status message */}
                 {status && (
                   <div
                     className={cn(
