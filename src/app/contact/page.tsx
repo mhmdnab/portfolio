@@ -198,20 +198,13 @@ export default function ContactPage() {
                   data-sitekey={`${
                     process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || ""
                   }`}
-                  data-callback="onTurnstileSuccess"
+                  data-callback={(token: string) => setToken(token)}
+                  data-theme="light"
                 ></div>
 
-                {/* ✅ Script: initializes Turnstile and updates token */}
                 <Script
-                  id="turnstile-script"
                   src="https://challenges.cloudflare.com/turnstile/v0/api.js"
                   strategy="afterInteractive"
-                  onReady={() => {
-                    // Attach global callback for Turnstile
-                    // @ts-ignore
-                    window.onTurnstileSuccess = (token: string) =>
-                      setToken(token);
-                  }}
                 />
 
                 <Button
