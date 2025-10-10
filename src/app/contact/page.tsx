@@ -44,7 +44,7 @@ export default function ContactPage() {
     try {
       if (!token) throw new Error("Missing Turnstile verification token");
 
-      // Step 1️⃣ — verify Turnstile
+      // Step 1️⃣ — verify Turnstile via API route
       const verify = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -52,9 +52,9 @@ export default function ContactPage() {
       });
       const verifyData = await verify.json();
 
-      if (!verifyData.success) throw new Error("Verification failed");
+      if (!verifyData.success) throw new Error("Turnstile verification failed");
 
-      // Step 2️⃣ — send via EmailJS (client-side only)
+      // Step 2️⃣ — send email via EmailJS directly (client-side)
       const res = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
@@ -66,12 +66,13 @@ export default function ContactPage() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
 
-      if (res.status === 200) {
+      // ✅ EmailJS returns a string "OK" when successful
+      if (res.status === 200 || res.text === "OK") {
         setStatus("success");
         setFeedbackMessage("Your message has been sent successfully!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        throw new Error("EmailJS failed");
+        throw new Error("EmailJS failed to send");
       }
     } catch (error) {
       console.error("Contact form error:", error);
