@@ -17,6 +17,21 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Script from "next/script";
 
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        element: HTMLElement,
+        options: {
+          sitekey: string;
+          callback: (token: string) => void;
+          "error-callback"?: () => void;
+        }
+      ) => void;
+    };
+  }
+}
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -27,33 +42,34 @@ export default function ContactPage() {
   const [status, setStatus] = useState<"success" | "error" | null>(null);
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [token, setToken] = useState<string>("");
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
 
   const turnstileRef = useRef<HTMLDivElement>(null);
 
-  // 🧠 Initialize Cloudflare Turnstile widget
+  // 🧩 Load Turnstile widget only after the script is ready
   useEffect(() => {
-    const interval = setInterval(() => {
-      // @ts-ignore
-      if (window.turnstile && turnstileRef.current) {
-        // @ts-ignore
-        window.turnstile.render(turnstileRef.current, {
-          sitekey: String(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!),
+    if (!isScriptLoaded || !turnstileRef.current) return;
+
+    // Add a small delay for mobile stability
+    const timeout = setTimeout(() => {
+      if (window.turnstile) {
+        window.turnstile.render(turnstileRef.current!, {
+          sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!,
           callback: (token: string) => {
             console.log("✅ Turnstile token generated:", token);
             setToken(token);
           },
-          "error-callback": () => console.error("❌ Turnstile failed to load"),
+          "error-callback": () => {
+            console.error("❌ Turnstile failed to load");
+          },
         });
-        clearInterval(interval);
       }
-    }, 500);
-    return () => clearInterval(interval);
-  }, []);
-  console.log(
-    "🔍 Turnstile site key:",
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
-  );
-  // 📧 Handle form submit (sends to /api/contact)
+    }, 300);
+
+    return () => clearTimeout(timeout);
+  }, [isScriptLoaded]);
+
+  // 📨 Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -70,7 +86,6 @@ export default function ContactPage() {
       });
 
       const data = (await res.json()) as { success: boolean; error?: string };
-
       console.log("📨 Contact response:", data);
 
       if (data.success) {
@@ -81,7 +96,7 @@ export default function ContactPage() {
         throw new Error(data.error || "Email sending failed");
       }
     } catch (error) {
-      console.error("Contact form error:", error);
+      console.error("❌ Contact form error:", error);
       setStatus("error");
       setFeedbackMessage(
         "Failed to send your message. Please try again later."
@@ -201,13 +216,17 @@ export default function ContactPage() {
                 />
 
                 {/* ✅ Turnstile container */}
-                <div ref={turnstileRef} className="cf-turnstile" />
+                <div
+                  ref={turnstileRef}
+                  className="cf-turnstile min-h-[70px] flex justify-center items-center"
+                />
 
                 {/* ✅ Load Turnstile script */}
                 <Script
                   id="turnstile-script"
                   src="https://challenges.cloudflare.com/turnstile/v0/api.js"
                   strategy="afterInteractive"
+                  onLoad={() => setIsScriptLoaded(true)}
                 />
 
                 {/* Submit button */}
