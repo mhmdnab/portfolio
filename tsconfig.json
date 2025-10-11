@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "esnext", // 🔥 Modern JS target for Cloudflare Workers
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Keep DOM + latest JS features
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -23,6 +23,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "functions" // 👈 Ensure your Cloudflare serverless functions are compiled
+  ],
   "exclude": ["node_modules"]
 }
