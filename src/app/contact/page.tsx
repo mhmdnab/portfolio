@@ -37,7 +37,7 @@ export default function ContactPage() {
       if (window.turnstile && turnstileRef.current) {
         // @ts-ignore
         window.turnstile.render(turnstileRef.current, {
-          sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!,
+          sitekey: String(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!),
           callback: (token: string) => {
             console.log("✅ Turnstile token generated:", token);
             setToken(token);
@@ -49,7 +49,10 @@ export default function ContactPage() {
     }, 500);
     return () => clearInterval(interval);
   }, []);
-
+  console.log(
+    "🔍 Turnstile site key:",
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+  );
   // 📧 Handle form submit (sends to /api/contact)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,7 +69,8 @@ export default function ContactPage() {
         body: JSON.stringify({ ...formData, token }),
       });
 
-      const data = await res.json();
+      const data = (await res.json()) as { success: boolean; error?: string };
+
       console.log("📨 Contact response:", data);
 
       if (data.success) {
@@ -74,7 +78,7 @@ export default function ContactPage() {
         setFeedbackMessage("Your message has been sent successfully!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        throw new Error("Email sending failed");
+        throw new Error(data.error || "Email sending failed");
       }
     } catch (error) {
       console.error("Contact form error:", error);

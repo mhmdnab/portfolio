@@ -1,11 +1,17 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message, token } = await req.json();
+    // ✅ Explicitly define expected input
+    const { name, email, message, token } = (await req.json()) as {
+      name: string;
+      email: string;
+      message: string;
+      token: string;
+    };
 
     // 🧠 Step 1: Verify Turnstile
     const verifyRes = await fetch(
@@ -20,7 +26,8 @@ export async function POST(req: Request) {
       }
     );
 
-    const verifyData = await verifyRes.json();
+    const verifyData = (await verifyRes.json()) as { success: boolean };
+
     console.log("✅ Turnstile verification:", verifyData);
 
     if (!verifyData.success) {
@@ -32,7 +39,7 @@ export async function POST(req: Request) {
 
     // 📧 Step 2: Send email via Resend
     const { data, error } = await resend.emails.send({
-      from: `Portfolio <${process.env.EMAIL_SENDER}>`,
+      from: `Portfolio <${process.env.EMAIL_SENDER!}>`,
       to: process.env.EMAIL_RECEIVER!,
       subject: `New message from ${name}`,
       html: `
@@ -46,13 +53,19 @@ export async function POST(req: Request) {
 
     if (error) {
       console.error("❌ Resend error:", error);
-      return NextResponse.json({ success: false, error: "Email send failed" });
+      return NextResponse.json(
+        { success: false, error: "Email send failed" },
+        { status: 500 }
+      );
     }
 
     console.log("📨 Email sent:", data);
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("❌ API error:", error);
-    return NextResponse.json({ success: false, error: "Server error" });
+    return NextResponse.json(
+      { success: false, error: "Server error" },
+      { status: 500 }
+    );
   }
 }
