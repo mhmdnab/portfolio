@@ -16,7 +16,6 @@ import {
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Script from "next/script";
-import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -31,7 +30,7 @@ export default function ContactPage() {
 
   const turnstileRef = useRef<HTMLDivElement>(null);
 
-  // 🧠 Initialize Turnstile safely when script is ready
+  // 🧠 Initialize Cloudflare Turnstile widget
   useEffect(() => {
     const interval = setInterval(() => {
       // @ts-ignore
@@ -51,7 +50,7 @@ export default function ContactPage() {
     return () => clearInterval(interval);
   }, []);
 
-  // 📧 Handle form submit
+  // 📧 Handle form submit (sends to /api/contact)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -61,36 +60,21 @@ export default function ContactPage() {
     try {
       if (!token) throw new Error("Missing Turnstile verification token");
 
-      // ✅ Step 1: Verify Turnstile token
-      const verify = await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token }),
+        body: JSON.stringify({ ...formData, token }),
       });
 
-      const verifyData = await verify.json();
-      console.log("Turnstile verify result:", verifyData);
+      const data = await res.json();
+      console.log("📨 Contact response:", data);
 
-      if (!verifyData.success) throw new Error("Verification failed");
-
-      // ✅ Step 2: Send via EmailJS (client-side)
-      const res = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-
-      if (res.status === 200) {
+      if (data.success) {
         setStatus("success");
         setFeedbackMessage("Your message has been sent successfully!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        throw new Error("EmailJS failed");
+        throw new Error("Email sending failed");
       }
     } catch (error) {
       console.error("Contact form error:", error);
@@ -158,7 +142,7 @@ export default function ContactPage() {
             </CardContent>
           </Card>
 
-          {/* Form */}
+          {/* Contact Form */}
           <Card className="p-6 shadow-lg">
             <CardHeader className="px-0 pt-0">
               <CardTitle className="text-2xl font-bold text-[#0c4f57]">
